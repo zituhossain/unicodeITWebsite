@@ -1,0 +1,759 @@
+.live-pricingRouteSection {
+  height: auto !important;
+  min-height: 1716px;
+  padding-bottom: 100px !important;
+  overflow: hidden;
+}
+
+.live-pricingRouteSection .live-pricingInner {
+  width: min(946px, 100%);
+}
+
+.live-pricingRouteSection .live-sectionLead {
+  width: min(660px, 100%);
+  height: auto;
+  margin: 20px auto 42px;
+}
+
+.pricing-calculator {
+  width: 100%;
+}
+
+.pricing-promotion {
+  color: #000000;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 40px;
+  font: 700 16px / 1.2 var(--sans);
+  text-align: center;
+  background: #e5da3c;
+  border-radius: 40px;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 28px;
+  padding: 6px 6px 6px 20px;
+  display: flex;
+  letter-spacing: -0.32px;
+}
+
+.pricing-promotion strong {
+  color: #fff;
+  white-space: nowrap;
+  background: #198225;
+  border-radius: 80px;
+  padding: 5px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.6px;
+}
+
+.pricing-tabs {
+  background: #191919;
+  border: 1px solid #2f2f2f;
+  border-radius: 16px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: 100%;
+  min-height: 80px;
+  display: grid;
+  overflow: hidden;
+  box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.15) inset;
+}
+
+.pricing-tabs button {
+  min-width: 0;
+  padding: 20px;
+  border: 0;
+  border-right: 1px solid #2b2b2b;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font: 600 18px/27px var(--sans);
+  letter-spacing: -0.18px;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.pricing-tabs button:last-child {
+  border-right: 0;
+}
+
+.pricing-tabs button:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing-tabs button:focus-visible,
+.pricing-control input:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -3px;
+}
+
+.pricing-tabs .pricing-tab-active {
+  background: linear-gradient(
+    90deg,
+    var(--brand-alpha-15),
+    var(--brand-alpha-05)
+  );
+  box-shadow: inset 0 -2px 0 var(--brand);
+}
+
+.pricing-control {
+  background: #191919;
+  border: 1px solid #292929;
+  border-radius: 16px;
+  grid-template-columns: 92px minmax(120px, 1fr) 116px;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-height: 80px;
+  margin-top: 16px;
+  padding: 14px 16%;
+  display: grid;
+  box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.15) inset;
+  background-blend-mode: normal, screen, normal;
+}
+
+.pricing-control label {
+  font: 500 16px/24px var(--sans);
+  text-align: right;
+}
+
+.pricing-control output {
+  color: #fff;
+  width: auto;
+  font: 600 16px / 24px var(--sans);
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 8px 28px;
+  margin: 0 auto;
+}
+
+.pricing-control input {
+  width: 100%;
+  height: 28px;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pricing-control input::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(
+    90deg,
+    var(--brand) 0 var(--pricing-progress),
+    #484848 var(--pricing-progress) 100%
+  );
+}
+
+.pricing-control input::-moz-range-track {
+  height: 6px;
+  border-radius: 99px;
+  background: #484848;
+}
+
+.pricing-control input::-moz-range-progress {
+  height: 6px;
+  border-radius: 99px;
+  background: var(--brand);
+}
+
+.pricing-control input::-webkit-slider-thumb {
+  width: 22px;
+  height: 22px;
+  margin-top: -8px;
+  appearance: none;
+  border: 2px solid #101010;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.pricing-control input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #101010;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.pricing-card-frame {
+  left: 50%;
+  width: min(1140px, calc(100vw - 80px)) !important;
+  max-width: none;
+  height: auto !important;
+  min-height: 0;
+  margin: 54px 0 0;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0;
+  transform: translateX(-50%);
+}
+
+.pricing-card-frame .live-benefitFrameDot {
+  position: absolute;
+  z-index: 7;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  background: #0a0a0a;
+}
+
+.pricing-card-frame .live-benefitFrameDot1 {
+  left: -4px;
+  top: -4px;
+}
+
+.pricing-card-frame .live-benefitFrameDot2 {
+  right: -4px;
+  top: -4px;
+}
+
+.pricing-card-frame .live-benefitFrameDot3 {
+  right: -4px;
+  bottom: -4px;
+}
+
+.pricing-card-frame .live-benefitFrameDot4 {
+  left: -4px;
+  bottom: -4px;
+}
+
+.pricing-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  width: 99%;
+  display: grid;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.pricing-card {
+  position: relative;
+  min-width: 0;
+  min-height: 606px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #292929;
+  border-radius: 20px;
+  background: #191919;
+  color: #fff;
+  overflow: visible;
+}
+
+.pricing-card-featured {
+  box-shadow: 0 0 0 1px var(--brand-alpha-10);
+  border: 2px solid rgba(9, 228, 200, 0.6);
+}
+
+.pricing-card-badge {
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--brand-dark);
+  font: 700 12px/12px var(--sans);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.pricing-card-badge img {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  display: block;
+}
+
+.pricing-card-heading {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-card-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.pricing-card-icon img {
+  width: 17px;
+  height: 17px;
+  display: block;
+  object-fit: contain;
+}
+
+.pricing-card-heading h3 {
+  margin: 0;
+  font: 500 17px/21px var(--sans);
+  letter-spacing: -0.2px;
+}
+
+.pricing-card-top > strong {
+  margin-top: 15px;
+  font: 500 40px/43px var(--sans);
+  letter-spacing: -1.2px;
+}
+
+.pricing-regular {
+  color: rgba(255, 255, 255, 0.6);
+  min-height: 29px;
+  font: 500 16px / 24px var(--sans);
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.pricing-regular span {
+  text-decoration: line-through;
+  letter-spacing: 0.48px;
+}
+
+.pricing-regular b {
+  background: var(--brand-alpha-20);
+  color: var(--brand);
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.pricing-card-top .live-liveButton {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pricing-card-top .pricing-navbar-cta {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 100%;
+  margin-top: 32px;
+  transform: none;
+}
+
+.pricing-card-top .pricing-navbar-cta:is(:hover, :focus-visible, :active) {
+  transform: none;
+}
+
+.pricing-card > ul {
+  flex: 1;
+  margin: 0;
+  padding: 24px 22px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+}
+
+.pricing-card > ul li {
+  display: grid;
+  grid-template-columns: 13px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  color: rgba(255, 255, 255, 0.7);
+  font: 500 16px/24px var(--sans);
+  letter-spacing: -0.32px;
+}
+
+.pricing-card > ul li b {
+  font-weight: 500;
+}
+
+.pricing-custom-scope-frame {
+  position: relative;
+  width: calc(100% + 2px);
+  max-width: calc(100% + 2px);
+  margin: 48px 0 0 -1px;
+  padding: 1px;
+  border-radius: 20px;
+  background: rgba(41, 41, 41, 0.95);
+  box-shadow: inset 0 0 0 1px #292929;
+}
+
+.pricing-custom-scope {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 24px;
+  min-height: 168px;
+  margin: 0 auto;
+  padding: 30px 30px 30px 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 184px;
+  align-items: center;
+  gap: 36px;
+  background:
+    linear-gradient(180deg, rgba(22, 22, 22, 0) 0%, #161616 100%),
+    url("/assets/pricing/custom-scope-texture.png") 0 0 / 50px 50px repeat,
+    #1a1a1a;
+  background-blend-mode: normal, screen, normal;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.pricing-custom-scope-copy {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.pricing-custom-scope-icon {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing-custom-scope-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.pricing-custom-scope h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font: 600 26px/31px var(--sans);
+  letter-spacing: -0.52px;
+}
+
+.pricing-custom-scope p {
+  width: min(480px, 100%);
+  margin: 0;
+  color: #b3b3b3;
+  font: 500 17px/25.5px var(--sans);
+  letter-spacing: -0.17px;
+}
+
+.pricing-custom-scope small {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 5px 10px;
+  display: inline-flex;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #d0d0d0;
+  font: 500 14px/19px var(--sans);
+  letter-spacing: -0.14px;
+}
+
+.pricing-custom-scope-actions {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.pricing-custom-scope-actions .live-liveButton {
+  width: 100%;
+}
+
+.pricing-whatsapp-link {
+  min-height: 42px;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 13px;
+  background: #2e2e2e;
+  color: #fff;
+  font: 600 15px/22px var(--sans);
+  letter-spacing: -0.15px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.pricing-whatsapp-link:hover {
+  background: #383838;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.1),
+    0 10px 24px rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
+}
+
+.pricing-whatsapp-link:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.pricing-whatsapp-link svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  fill: #25d366;
+}
+
+.pricing-selection-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.live-pricingRouteSection .live-pricingQuoteExact {
+  margin-top: 40px;
+}
+
+@media (max-width: 1199.98px) {
+  .live-pricingRouteSection {
+    min-height: 0;
+    padding: 112px 32px 80px !important;
+  }
+
+  .live-pricingRouteSection .live-liveTitle,
+  .live-pricingRouteSection .live-sectionLead {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .pricing-card-grid {
+    gap: 12px;
+  }
+
+  .pricing-card > ul {
+    padding: 22px 16px;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .live-pricingRouteSection {
+    padding: 96px 20px 64px !important;
+  }
+
+  .pricing-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .pricing-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pricing-tabs button {
+    min-width: 142px;
+    flex: 1 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .pricing-control {
+    padding: 14px 18px;
+    grid-template-columns: 78px minmax(100px, 1fr) 100px;
+    gap: 12px;
+  }
+
+  .pricing-card-grid {
+    gap: 10px;
+  }
+
+  .pricing-card {
+    min-height: 580px;
+  }
+
+  .pricing-card-heading h3 {
+    font-size: 15px;
+  }
+
+  .pricing-card-top > strong {
+    font-size: 32px;
+  }
+
+  .pricing-regular {
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .live-pricingRouteSection {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .pricing-promotion {
+    padding-left: 11px;
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .pricing-promotion strong {
+    font-size: 9px;
+  }
+
+  .pricing-control {
+    padding: 14px;
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+  }
+
+  .pricing-control label {
+    text-align: left;
+  }
+
+  .pricing-control input {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .pricing-control output {
+    min-width: 86px;
+  }
+
+  .pricing-card-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 22px;
+  }
+
+  .pricing-card {
+    min-height: 0;
+  }
+
+  .pricing-card-heading h3 {
+    font-size: 17px;
+  }
+
+  .pricing-card-top > strong {
+    font-size: 40px;
+  }
+
+  .pricing-regular {
+    align-items: center;
+    flex-direction: row;
+    gap: 9px;
+  }
+
+  .pricing-card > ul {
+    min-height: 300px;
+    padding: 24px;
+  }
+
+  .live-pricingRouteSection .live-pricingQuoteExact {
+    margin-top: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-tabs button {
+    transition: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .pricing-custom-scope-frame {
+    margin-top: 44px;
+  }
+
+  .pricing-custom-scope {
+    padding: 28px;
+    grid-template-columns: minmax(0, 1fr) 176px;
+    gap: 28px;
+  }
+
+  .pricing-custom-scope-copy {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .pricing-custom-scope {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .pricing-custom-scope-actions {
+    width: min(260px, 100%);
+  }
+}
+
+@media (max-width: 599.98px) {
+  .pricing-custom-scope-frame {
+    margin-top: 36px;
+  }
+
+  .pricing-custom-scope {
+    padding: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-custom-scope-copy {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pricing-custom-scope h3 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .pricing-custom-scope p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .pricing-custom-scope-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .pricing-card-frame {
+    width: calc(100vw - 64px) !important;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .pricing-card-frame {
+    width: calc(100vw - 40px) !important;
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .pricing-card-frame {
+    width: calc(100vw - 32px) !important;
+  }
+}

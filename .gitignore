@@ -1,0 +1,11 @@
+.next
+node_modules
+coverage
+.env*
+!.env.example
+test-results
+playwright-report
+/public/
+/.tmp-checks/
+/.tmp-chrome-profile/
+Unicode IT Website.fig

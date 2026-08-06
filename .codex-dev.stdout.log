@@ -1,0 +1,55 @@
+
+> aexo-reproduction@1.0.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 826ms
+
+ GET / 200 in 4.0s (next.js: 3.0s, application-code: 970ms)
+ GET / 200 in 201ms (next.js: 4ms, application-code: 198ms)
+ GET / 200 in 183ms (next.js: 4ms, application-code: 178ms)
+ GET / 200 in 239ms (next.js: 6ms, application-code: 233ms)
+✓ Compiled in 1324ms
+ GET / 200 in 277ms (next.js: 72ms, application-code: 205ms)
+ GET / 200 in 98ms (next.js: 7ms, application-code: 91ms)
+ GET / 200 in 256ms (next.js: 4ms, application-code: 252ms)
+ GET / 200 in 185ms (next.js: 6ms, application-code: 180ms)
+✓ Compiled in 1151ms
+ GET / 200 in 240ms (next.js: 162ms, application-code: 78ms)
+ GET / 200 in 253ms (next.js: 76ms, application-code: 178ms)
+ GET / 200 in 552ms (next.js: 66ms, application-code: 486ms)
+ GET / 200 in 554ms (next.js: 4ms, application-code: 550ms)
+ GET / 200 in 418ms (next.js: 4ms, application-code: 414ms)
+ GET / 200 in 418ms (next.js: 74ms, application-code: 344ms)
+ GET / 200 in 261ms (next.js: 4ms, application-code: 257ms)
+ GET / 200 in 199ms (next.js: 14ms, application-code: 184ms)
+ GET / 200 in 113ms (next.js: 5ms, application-code: 108ms)
+ GET / 200 in 56ms (next.js: 4ms, application-code: 52ms)
+✓ Compiled in 1306ms
+✓ Compiled in 1069ms
+✓ Compiled in 1237ms
+✓ Compiled in 1143ms
+✓ Compiled in 1083ms
+ GET / 200 in 393ms (next.js: 168ms, application-code: 225ms)
+ GET / 200 in 395ms (next.js: 71ms, application-code: 324ms)
+ GET / 200 in 128ms (next.js: 4ms, application-code: 123ms)
+ GET / 200 in 130ms (next.js: 4ms, application-code: 126ms)
+✓ Compiled in 1032ms
+✓ Compiled in 985ms
+ GET / 200 in 569ms (next.js: 74ms, application-code: 495ms)
+ GET / 200 in 570ms (next.js: 172ms, application-code: 398ms)
+ GET / 200 in 324ms (next.js: 94ms, application-code: 230ms)
+ GET / 200 in 326ms (next.js: 7ms, application-code: 319ms)
+ GET / 200 in 481ms (next.js: 4ms, application-code: 476ms)
+ GET / 200 in 482ms (next.js: 69ms, application-code: 413ms)
+ GET / 200 in 350ms (next.js: 5ms, application-code: 344ms)
+ GET / 200 in 350ms (next.js: 79ms, application-code: 270ms)
+ GET / 200 in 182ms (next.js: 99ms, application-code: 83ms)
+ GET / 200 in 185ms (next.js: 6ms, application-code: 179ms)
+ GET / 200 in 186ms (next.js: 63ms, application-code: 123ms)
+ GET / 200 in 185ms (next.js: 121ms, application-code: 63ms)
+✓ Compiled in 963ms
+✓ Compiled in 1991ms
+[?25h

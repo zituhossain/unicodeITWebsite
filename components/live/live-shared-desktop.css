@@ -1,0 +1,618 @@
+/*
+ * Authoritative desktop overrides for the two components shared by every route.
+ * Keeping these rules in one late-loaded module prevents older route-calibration
+ * rules in live.module.css from changing the 1200px and 1440px variants.
+ */
+
+@media (min-width: 1200px) {
+  .shared-scale-cta {
+    box-sizing: border-box;
+    height: 866px;
+    min-height: 866px;
+    padding: 100px 0;
+    background: #060b0a;
+  }
+
+  .shared-scale-cta .shared-glow {
+    left: 50%;
+    top: -143px;
+    width: 2327px;
+    height: 1267px;
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+
+  .shared-scale-cta .shared-texture {
+    left: 50%;
+    top: 167px;
+    width: calc(100% + 240px);
+    height: 930px;
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+
+  .shared-kicker {
+    position: relative;
+    z-index: 8;
+    width: 208.234px;
+    height: 21px;
+    flex: 0 0 21px;
+  }
+
+  .shared-kicker > p {
+    width: 100%;
+    height: 21px;
+    justify-content: flex-start;
+    color: var(--brand-highlight);
+    font: 500 14px/21px var(--mono);
+    letter-spacing: .42px;
+  }
+
+  .shared-scale-cta h2 {
+    width: 928px;
+    height: 240px;
+    flex: 0 0 240px;
+    margin: 12px 0 66px;
+    font: 400 120px/120px var(--display);
+    letter-spacing: -2.4px;
+  }
+
+  .shared-scale-cta .shared-button {
+    position: relative;
+    z-index: 8;
+    width: 928px;
+    height: 327px;
+    min-height: 327px;
+    flex: 0 0 327px;
+    display: block;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+  }
+
+  .shared-scale-cta .shared-button-base,
+  .shared-scale-cta .shared-button-rim,
+  .shared-scale-cta .shared-button-texture {
+    opacity: 1 !important;
+  }
+
+  .shared-scale-cta .shared-button-base,
+  .shared-scale-cta .shared-button-shade,
+  .shared-scale-cta .shared-button-texture {
+    object-fit: fill;
+  }
+
+  .shared-scale-cta .shared-button-rim {
+    object-fit: contain;
+  }
+
+  .shared-scale-cta .shared-button-shade {
+    opacity: .1 !important;
+  }
+
+  .shared-button-text {
+    letter-spacing: 2.1333px;
+    transition: opacity .4s cubic-bezier(.44, 0, .56, 1),
+      text-shadow .4s cubic-bezier(.44, 0, .56, 1),
+      transform .4s cubic-bezier(.44, 0, .56, 1);
+  }
+
+  .shared-button-text::after {
+    content: none;
+  }
+
+  .shared-arrow {
+    right: auto;
+    transition: left .4s cubic-bezier(.44, 0, .56, 1),
+      transform .4s cubic-bezier(.44, 0, .56, 1);
+  }
+
+  .shared-button-well,
+  .shared-button-fill,
+  .shared-button-texture {
+    transition: transform .4s cubic-bezier(.44, 0, .56, 1);
+  }
+
+  .shared-button:hover .shared-button-text,
+  html[data-shared-motion="hover"] .shared-scale-cta .shared-button .shared-button-text {
+    transform: scale(.98) !important;
+    opacity: 1 !important;
+    text-shadow: 0 147px 41px rgb(var(--brand-rgb) / .02),
+      0 94px 38px rgb(var(--brand-rgb) / .14),
+      0 53px 32px rgb(var(--brand-rgb) / .4),
+      0 23px 23px rgb(var(--brand-rgb) / .75),
+      0 6px 13px rgb(var(--brand-rgb) / .9) !important;
+  }
+
+  .shared-button:hover .shared-arrow,
+  html[data-shared-motion="hover"] .shared-scale-cta .shared-button .shared-arrow {
+    /* Framer moves the 202px control to right:15px inside the 807px row,
+       then scales the 830px inner group to .98 around its centre. */
+    left: 640.24px !important;
+    transform: rotate(360deg) scale(.98) !important;
+  }
+
+  .shared-button:hover .shared-button-well,
+  .shared-button:hover .shared-button-fill,
+  .shared-button:hover .shared-button-texture,
+  html[data-shared-motion="hover"] .shared-scale-cta .shared-button .shared-button-well,
+  html[data-shared-motion="hover"] .shared-scale-cta .shared-button .shared-button-fill,
+  html[data-shared-motion="hover"] .shared-scale-cta .shared-button .shared-button-texture {
+    transform: scale(.98) !important;
+  }
+
+  .shared-scale-cta > h2 {
+    position: relative;
+    z-index: 8;
+  }
+
+  .shared-physics-field {
+    position: absolute;
+    bottom: 2px;
+    width: 496px;
+    height: 630px;
+    overflow: hidden;
+    z-index: 6;
+    pointer-events: auto;
+  }
+
+  .shared-physics-field[data-physics-field="left"] { left: 0; }
+  .shared-physics-field[data-physics-field="right"] { right: 0; }
+
+  .shared-tags .shared-physics-field > span {
+    visibility: hidden;
+    will-change: transform, opacity;
+    translate: var(--tag-x, 0) var(--tag-y, 0);
+    rotate: var(--tag-rotate, 0deg);
+    padding: 8px 15px 8px 12px !important;
+    gap: 6px !important;
+    font-size: 16px !important;
+    line-height: 19.2px !important;
+    letter-spacing: -.02em !important;
+    pointer-events: auto;
+    touch-action: none;
+    user-select: none;
+    border: 0;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: none;
+  }
+
+  .shared-tags [data-scale-tag="0"] svg { width: 23px !important; height: 23px !important; transform: rotate(-11deg) !important; }
+  .shared-tags [data-scale-tag="1"] svg { width: 24px !important; height: 24px !important; transform: rotate(-24deg) !important; }
+  .shared-tags [data-scale-tag="2"] svg { width: 22px !important; height: 22px !important; transform: none !important; }
+  .shared-tags [data-scale-tag="3"] svg { width: 23px !important; height: 23px !important; transform: rotate(21deg) !important; }
+  .shared-tags [data-scale-tag="4"] svg { width: 23px !important; height: 23px !important; transform: rotate(-12deg) !important; }
+  .shared-tags [data-scale-tag="5"] svg { width: 22px !important; height: 22px !important; transform: none !important; }
+  .shared-tags [data-scale-tag="6"] svg { width: 24px !important; height: 24px !important; transform: rotate(23deg) !important; }
+  .shared-tags [data-scale-tag="7"] svg { width: 24px !important; height: 24px !important; transform: rotate(29deg) !important; }
+
+  .shared-footer {
+    height: 581px;
+    min-height: 581px;
+    background: radial-gradient(ellipse at 50% 28%, var(--brand-deep) 0, #0a0a0a 63%);
+  }
+
+  .shared-footer-backdrop {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+
+  .shared-footer-main {
+    width: min(1140px, calc(100% - 80px));
+    height: 374px;
+    grid-template-columns: 387px minmax(189px, 209px) 274px 270px;
+  }
+
+  .shared-footer-main > div {
+    box-sizing: border-box;
+    height: 374px;
+    padding: 74px 50px 24px;
+    gap: 12px;
+    border: 0;
+  }
+
+  .shared-footer-main > .shared-footer-brand {
+    padding: 74px 24px 24px;
+    border-left: 1px solid #282828;
+    border-right: 1px solid #282828;
+  }
+
+  .shared-footer-main > .shared-footer-pages {
+    border-right: 1px solid #282828;
+  }
+
+  .shared-footer-main > .shared-footer-socials {
+    gap: 24px !important;
+    border-right: 1px solid #282828;
+  }
+
+  .shared-footer-main b {
+    height: 21px;
+    margin: 0 0 8px;
+    color: #999;
+    font: 500 14px/21px var(--mono);
+    letter-spacing: .42px;
+  }
+
+  .shared-footer-main a {
+    color: #fff;
+    font: 500 16px/24px var(--sans);
+    letter-spacing: -.16px;
+    transition: color .3s ease, opacity .3s ease, transform .3s ease;
+  }
+
+  .shared-footer-main a:hover {
+    color: var(--brand-highlight);
+    transform: translateX(2px);
+  }
+
+  .shared-footer-main .shared-footer-socials b {
+    margin-bottom: 6px;
+  }
+
+  .shared-footer-socials a {
+    width: 118px;
+    height: 37px;
+    transform: none;
+  }
+
+  .shared-footer-socials a:hover {
+    transform: translateX(2px);
+  }
+
+  .shared-footer-socials a i {
+    flex: 0 0 37px;
+    transition: filter .3s ease, transform .3s cubic-bezier(.34, 1.4, .64, 1);
+  }
+
+  .shared-footer-socials a:hover i {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+  }
+
+  .shared-footer-logo {
+    width: 103px;
+    height: 34px;
+  }
+
+  .shared-footer-logo img {
+    width: 103px;
+    height: 34px;
+  }
+
+  .shared-footer .shared-footer-brand .shared-footer-logo img:first-child {
+    width: 103px;
+    height: 34px;
+  }
+
+  .shared-footer-email {
+    --footer-button-spring: linear(0, 0.0794, 0.2486, 0.4375, 0.6093, 0.7484, 0.8518, 0.9231, 0.9688, 0.9954, 1.0091, 1.0144, 1.015, 1.0131, 1.0104, 1.0076, 1.0051, 1.0032, 1.0018, 1.0009, 1.0003);
+    box-sizing: border-box;
+    position: relative;
+    width: 339px;
+    height: 49px;
+    padding: 6px 16px 6px 6px;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow: clip;
+    transform: none !important;
+    transition: padding .4s var(--footer-button-spring) !important;
+  }
+
+  .shared-footer-main .shared-footer-email:hover {
+    color: #fff;
+    transform: none !important;
+  }
+
+  .shared-footer-email-well {
+    box-sizing: border-box;
+    position: relative;
+    width: 37px;
+    height: 37px;
+    flex: 0 0 37px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2),
+      0 3px 3px rgba(0, 0, 0, .3),
+      0 1px 1px rgba(0, 0, 0, .5),
+      inset 0 3px 3px rgba(255, 255, 255, .25),
+      0 1px 1px rgba(255, 255, 255, .5);
+    transition: width .4s var(--footer-button-spring),
+      height .4s var(--footer-button-spring),
+      flex-basis .4s var(--footer-button-spring),
+      border-radius .4s var(--footer-button-spring);
+  }
+
+  .shared-footer-email-well-inner {
+    box-sizing: border-box;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: clip;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(0, 0, 0, .3));
+    box-shadow: inset 0 -1px rgba(0, 0, 0, .25);
+    transition: width .4s var(--footer-button-spring),
+      height .4s var(--footer-button-spring),
+      flex-basis .4s var(--footer-button-spring),
+      padding .4s var(--footer-button-spring),
+      border-radius .4s var(--footer-button-spring);
+  }
+
+  .shared-footer-email-hover-label,
+  .shared-footer-email-rest-label {
+    position: absolute;
+    top: 51%;
+    width: max-content;
+    white-space: nowrap;
+    font: 500 15px/22.5px var(--sans);
+    letter-spacing: -.3px;
+    transition: left .4s var(--footer-button-spring),
+      right .4s var(--footer-button-spring),
+      opacity .4s var(--footer-button-spring),
+      transform .4s var(--footer-button-spring);
+  }
+
+  .shared-footer-email-hover-label {
+    z-index: 1;
+    left: -63px;
+    color: #0a0a0a;
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  .shared-footer-email-rest-label {
+    left: 50%;
+    color: #fff;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .shared-footer-email-icon {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shared-footer-email-icon img {
+    width: 24px;
+    height: 24px;
+    max-width: none;
+    object-fit: fill;
+  }
+
+  .shared-footer-email:hover,
+  html[data-shared-motion="hover"] .shared-footer-email {
+    padding: 2px;
+  }
+
+  .shared-footer-email:hover .shared-footer-email-well,
+  html[data-shared-motion="hover"] .shared-footer-email .shared-footer-email-well {
+    width: 1px;
+    height: 45px;
+    flex: 1 0 0;
+    border-radius: 12px;
+  }
+
+  .shared-footer-email:hover .shared-footer-email-well-inner,
+  html[data-shared-motion="hover"] .shared-footer-email .shared-footer-email-well-inner {
+    width: 100%;
+    height: 43px;
+    flex: 1 0 auto;
+    padding: 4px 0;
+    justify-content: flex-end;
+    border-radius: 12px;
+  }
+
+  .shared-footer-email:hover .shared-footer-email-hover-label,
+  html[data-shared-motion="hover"] .shared-footer-email .shared-footer-email-hover-label {
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .shared-footer-email:hover .shared-footer-email-rest-label,
+  html[data-shared-motion="hover"] .shared-footer-email .shared-footer-email-rest-label {
+    left: auto;
+    right: -209px;
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  .shared-footer-bottom {
+    box-sizing: border-box;
+    height: 83px;
+    padding: 0 max(40px, calc((100% - 1140px) / 2));
+    border-top: 1px solid #282828;
+  }
+
+  .shared-footer-bottom > span:nth-child(2) {
+    color: #999;
+    font: 500 15px/22.5px var(--sans);
+    letter-spacing: -.15px;
+  }
+
+  .shared-footer-bottom > span:nth-child(2) i {
+    animation: sharedFooterAvailability .5s linear infinite alternate;
+  }
+
+  .shared-footer-bottom > div {
+    gap: 31px;
+  }
+
+  .shared-footer-bottom > div a {
+    color: #fff;
+    opacity: 1;
+    font: 500 15px/22.5px var(--sans);
+    letter-spacing: -.3px;
+    transition: color .3s ease, opacity .3s ease;
+  }
+
+  .shared-footer-bottom > div a:hover {
+    color: var(--brand-highlight);
+  }
+
+  .shared-footer-creator {
+    width: 123.469px;
+    height: 29px;
+  }
+
+  .shared-footer-wave {
+    width: 17280px;
+    height: 124px;
+    display: flex;
+    animation: sharedFooterWave 57.6s linear infinite;
+    will-change: transform;
+  }
+
+  .shared-footer-wave img {
+    width: 8640px;
+    height: 124px;
+    max-width: none;
+    flex: 0 0 8640px;
+    object-fit: fill;
+  }
+
+  html[data-motion="paused"] .shared-footer-wave {
+    animation: none !important;
+    transform: translateX(0) !important;
+  }
+
+  html[data-shared-motion="loop"] .shared-footer-wave {
+    animation: none !important;
+    transform: translateX(-4320px) !important;
+  }
+
+  html[data-shared-motion="initial"] [data-cta-copy],
+  html[data-shared-motion="initial"] [data-cta-button],
+  html[data-shared-motion="initial"] [data-scale-tag] {
+    opacity: 0 !important;
+  }
+
+  html[data-shared-motion="initial"] [data-cta-copy] {
+    transform: translateY(44px) scale(.94) !important;
+  }
+
+  html[data-shared-motion="initial"] [data-cta-button] {
+    transform: translateY(48px) scale(.96) !important;
+  }
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .shared-physics-field {
+    position: absolute;
+    bottom: 2px;
+    height: 630px;
+    overflow: hidden;
+    z-index: 4;
+    pointer-events: auto;
+  }
+
+  .shared-physics-field[data-physics-field="left"] {
+    left: 0;
+    bottom: -1px;
+    width: 314px;
+    height: 631px;
+  }
+
+  .shared-physics-field[data-physics-field="right"] {
+    right: 0;
+    width: 325px;
+  }
+
+  .shared-tags .shared-physics-field > span {
+    position: absolute;
+    visibility: hidden;
+    pointer-events: auto;
+    touch-action: none;
+    user-select: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .shared-footer-email {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shared-footer-email-well {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 37px;
+    height: 37px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .shared-footer-email-well-inner,
+  .shared-footer-email-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shared-footer-email-well-inner {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(0, 0, 0, .3));
+  }
+
+  .shared-footer-email-icon img { width: 24px; height: 24px; }
+  .shared-footer-email-hover-label { display: none; }
+
+  .shared-footer-email-rest-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+}
+
+@keyframes sharedFooterWave {
+  to { transform: translateX(-8640px); }
+}
+
+@keyframes sharedFooterAvailability {
+  to { opacity: .3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shared-footer-wave,
+  .shared-footer-bottom > span:nth-child(2) i { animation: none !important; }
+  .shared-button-text,
+  .shared-arrow,
+  .shared-footer-email,
+  .shared-footer-email-well,
+  .shared-footer-email-well-inner,
+  .shared-footer-email-hover-label,
+  .shared-footer-email-rest-label,
+  .shared-footer-main a,
+  .shared-footer-socials a i { transition: none !important; }
+}

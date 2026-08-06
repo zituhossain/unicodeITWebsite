@@ -1,0 +1,47 @@
+{
+  "name": "aexo-reproduction",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:visual": "node scripts/visual-regression.mjs",
+    "test:routes": "node scripts/route-regression.mjs",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "test:motion": "node scripts/desktop-motion-audit.mjs",
+    "freeze:reference": "node scripts/freeze-reference.mjs",
+    "sync:live-assets": "node scripts/sync-live-assets.mjs"
+  },
+  "dependencies": {
+    "country-flag-icons": "^1.6.20",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.15",
+    "matter-js": "^0.20.0",
+    "next": "16.2.10",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/matter-js": "^0.20.2",
+    "@types/node": "^24.0.0",
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.10",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
+  }
+}

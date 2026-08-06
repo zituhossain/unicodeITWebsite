@@ -1,0 +1,631 @@
+.rolling-primary {
+  --rolling-spring: linear(0, .509 10%, .833 20%, .976 30%, 1.013 40%, 1.011 55%, 1.001 75%, 1);
+  --rolling-wide-label-out-left: 50%;
+  --rolling-wide-label-out-right: auto;
+  --rolling-wide-label-out-opacity: 1;
+  --rolling-wide-label-out-transform: translate(-50%, -50%);
+  --rolling-wide-label-in-left: -84px;
+  --rolling-wide-label-in-opacity: 0;
+  --rolling-wide-label-in-transform: translateY(-50%);
+  --rolling-wide-arrow-out-left: 50%;
+  --rolling-wide-arrow-out-opacity: 1;
+  --rolling-wide-arrow-out-transform: translate(-50%, -50%);
+  --rolling-wide-arrow-in-left: -70px;
+  --rolling-wide-arrow-in-opacity: 0;
+  --rolling-wide-arrow-in-transform: translate(-50%, -50%);
+  --rolling-wide-hover-label-out-right: -209px;
+  position: relative;
+  isolation: isolate;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: hidden;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  will-change: padding, border-radius;
+  transition: padding .4s var(--rolling-spring), border-radius .4s var(--rolling-spring), box-shadow .4s var(--rolling-spring), background-color .4s var(--rolling-spring);
+  box-sizing: border-box;
+}
+
+.rolling-primary::before {
+  content: none;
+}
+
+.rolling-compact {
+  position: absolute;
+  z-index: 1;
+  top: 49%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 110px;
+  height: 41px;
+  min-height: 41px;
+  padding: 6px 16px 6px 6px;
+  gap: 8px;
+  border-radius: 12px;
+  background: #303030;
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 11px 10px rgba(0, 0, 0, .8), inset 0 -2px 1px rgba(0, 0, 0, .4);
+  font: 500 15px/22.5px var(--sans);
+  letter-spacing: -.02em;
+}
+
+.rolling-wide {
+  width: 248px;
+  height: 49px;
+  min-height: 49px;
+  padding: 6px 20px 6px 6px;
+  gap: 11px;
+  border-radius: 14px;
+  background: #303030;
+  color: #fff;
+  box-shadow: inset 0 3px 13px rgba(255, 255, 255, .2), 0 11px 10px rgba(0, 0, 0, .8), inset 0 -2px 1px rgba(0, 0, 0, .4);
+  font: 500 16px/24px var(--sans);
+  letter-spacing: -.02em;
+}
+
+.rolling-small {
+  position: relative;
+  width: 137px;
+  height: 41px;
+  min-height: 41px;
+  padding: 6px 16px 6px 6px;
+  gap: 8px;
+  border-radius: 12px;
+  background: #303030;
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 11px 10px rgba(0, 0, 0, .8), inset 0 -2px 1px rgba(0, 0, 0, .4);
+  font: 500 15px/22.5px var(--sans);
+  letter-spacing: -.02em;
+}
+
+.rolling-red::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: #fff url('/assets/live/RwRiFlRDdKjQVWAfTvgN6lyW4Pw.png') center/100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.rolling-red {
+  --rolling-wide-label-in-left: -77px;
+  --rolling-wide-arrow-out-left: 49%;
+  --rolling-wide-arrow-in-left: -121px;
+  --rolling-wide-arrow-in-opacity: 1;
+  --rolling-wide-hover-label-out-right: -118px;
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 11px 10px rgba(0, 0, 0, .8), inset 0 -2px 1px rgba(0, 0, 0, .4);
+}
+
+.rolling-well {
+  position: relative;
+  z-index: 1;
+  width: 29px !important;
+  height: 29px !important;
+  flex: 0 0 29px !important;
+  padding: 1px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 0 !important;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .2), 0 3px 3px rgba(0, 0, 0, .3), 0 1px 1px rgba(0, 0, 0, .5), inset 0 3px 3px rgba(255, 255, 255, .25), 0 1px 1px rgba(255, 255, 255, .5);
+  will-change: width, height, flex-basis, border-radius;
+  transition: width .4s var(--rolling-spring), height .4s var(--rolling-spring), flex-basis .4s var(--rolling-spring), border-radius .4s var(--rolling-spring), box-shadow .4s var(--rolling-spring);
+  box-sizing: border-box;
+}
+
+.rolling-wide .rolling-well {
+  width: 37px !important;
+  height: 37px !important;
+  flex-basis: 37px !important;
+  border-radius: 10px;
+}
+
+.rolling-red .rolling-well {
+  background: var(--rolling-accent, var(--brand));
+}
+
+.rolling-fill {
+  position: relative;
+  width: 27px !important;
+  height: 27px !important;
+  flex: 0 0 27px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 0 !important;
+  padding: 0 !important;
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(0, 0, 0, .3));
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+  will-change: width, height, border-radius, padding;
+  transition: width .4s var(--rolling-spring), height .4s var(--rolling-spring), border-radius .4s var(--rolling-spring), padding .4s var(--rolling-spring);
+  box-sizing: border-box;
+}
+
+.rolling-wide .rolling-fill {
+  width: 35px !important;
+  height: 35px !important;
+  flex-basis: 35px !important;
+  border-radius: 10px;
+}
+
+.rolling-arrow-rail {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: 0;
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.rolling-wide .rolling-arrow-rail {
+  width: 35px;
+  height: 35px;
+}
+
+.rolling-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: fill;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  will-change: transform, opacity, left;
+  transition: left .4s var(--rolling-spring), opacity .4s var(--rolling-spring), transform .4s var(--rolling-spring);
+}
+
+.rolling-red .rolling-arrow {
+  height: 28px;
+}
+
+.rolling-red.rolling-wide .rolling-arrow {
+  top: 49%;
+}
+
+.rolling-arrow-incoming {
+  left: -70px;
+  opacity: 0;
+}
+
+.rolling-label {
+  z-index: 2;
+  width: max-content !important;
+  height: auto !important;
+  flex: none !important;
+  padding: 0 !important;
+  display: block !important;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: left, right, opacity, transform;
+  transition: left .4s var(--rolling-spring), right .4s var(--rolling-spring), opacity .4s var(--rolling-spring), transform .4s var(--rolling-spring);
+}
+
+.rolling-label-incoming {
+  position: absolute !important;
+  left: -84px !important;
+  right: auto !important;
+  top: 50% !important;
+  color: #0a0a0a;
+  opacity: 0;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-red .rolling-label-incoming {
+  color: #fff;
+}
+
+.rolling-red .rolling-label-outgoing {
+  color: #0a0a0a;
+}
+
+.rolling-primary:not(.rolling-red) .rolling-label-incoming {
+  color: #0a0a0a !important;
+}
+
+.rolling-primary:not(.rolling-red) .rolling-label-outgoing {
+  color: #fff !important;
+}
+
+.rolling-label-outgoing {
+  position: absolute !important;
+  left: auto !important;
+  right: 16px !important;
+  top: 50% !important;
+  color: inherit;
+  opacity: 1;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-wide .rolling-label-outgoing {
+  left: 50% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-red.rolling-wide .rolling-label-outgoing {
+  left: auto !important;
+  right: 20px !important;
+  top: 49% !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-red.rolling-wide .rolling-label-incoming {
+  left: -77px !important;
+  top: 49% !important;
+  opacity: 0;
+}
+
+.rolling-red.rolling-wide .rolling-arrow-incoming {
+  opacity: 1;
+}
+
+.rolling-primary:is(:hover, :focus-visible) {
+  --rolling-wide-label-out-left: auto;
+  --rolling-wide-label-out-right: var(--rolling-wide-hover-label-out-right);
+  --rolling-wide-label-out-opacity: 0;
+  --rolling-wide-label-out-transform: translate(18px, -50%);
+  --rolling-wide-label-in-left: 50%;
+  --rolling-wide-label-in-opacity: 1;
+  --rolling-wide-label-in-transform: translate(-50%, -50%);
+  --rolling-wide-arrow-out-left: 31px;
+  --rolling-wide-arrow-out-opacity: 1;
+  --rolling-wide-arrow-out-transform: translate(-50%, -50%);
+  --rolling-wide-arrow-in-left: 51%;
+  --rolling-wide-arrow-in-opacity: 1;
+  --rolling-wide-arrow-in-transform: translateY(-50%);
+  padding: 2px;
+  transform: none;
+}
+
+.rolling-primary:is(:hover, :focus-visible) .rolling-well {
+  width: 100% !important;
+  height: 37px !important;
+  flex: 1 0 1px !important;
+  border-radius: 10px;
+}
+
+.rolling-wide:is(:hover, :focus-visible) .rolling-well {
+  height: 45px !important;
+  border-radius: 14px;
+}
+
+.rolling-primary:is(:hover, :focus-visible) .rolling-fill {
+  width: 100% !important;
+  height: 35px !important;
+  flex-basis: 100% !important;
+  justify-content: flex-end;
+  padding: 4px 8px !important;
+  border-radius: 10px;
+}
+
+.rolling-wide:is(:hover, :focus-visible) .rolling-fill {
+  height: 43px !important;
+  padding: 4px 0 !important;
+  border-radius: 14px;
+}
+
+.rolling-primary:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 8px !important;
+  opacity: 1;
+}
+
+.rolling-wide:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-red:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 11px !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary:is(:hover, :focus-visible) .rolling-label-outgoing {
+  left: auto !important;
+  right: -76px !important;
+  opacity: 0;
+}
+
+.rolling-compact:is(:hover, :focus-visible) {
+  transform: translateY(-50%);
+}
+
+.rolling-small:is(:hover, :focus-visible) {
+  transform: none;
+}
+
+.rolling-compact:is(:hover, :focus-visible) .rolling-label-outgoing,
+.rolling-small:is(:hover, :focus-visible) .rolling-label-outgoing {
+  right: -58px !important;
+}
+
+.rolling-wide:is(:hover, :focus-visible) .rolling-label-outgoing {
+  left: auto !important;
+  right: -209px !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-red.rolling-wide:is(:hover, :focus-visible) .rolling-label-outgoing {
+  right: -76px !important;
+  opacity: 0;
+  transform: translate(18px, -50%) !important;
+}
+
+.rolling-red.rolling-wide:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 11px !important;
+  opacity: 1;
+}
+
+.rolling-red.rolling-wide:is(:hover, :focus-visible) .rolling-arrow-outgoing {
+  left: 33px;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.rolling-red.rolling-wide:is(:hover, :focus-visible) .rolling-arrow-incoming {
+  left: 51%;
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.rolling-primary:is(:hover, :focus-visible) .rolling-arrow-outgoing {
+  left: 33px;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.rolling-primary:is(:hover, :focus-visible) .rolling-arrow-incoming {
+  left: calc(100% - 32px);
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.rolling-primary.rolling-centered .rolling-label-outgoing {
+  left: var(--rolling-wide-label-out-left) !important;
+  right: var(--rolling-wide-label-out-right) !important;
+  opacity: var(--rolling-wide-label-out-opacity);
+  transform: var(--rolling-wide-label-out-transform) !important;
+}
+
+.rolling-primary.rolling-centered .rolling-label-incoming {
+  left: var(--rolling-wide-label-in-left) !important;
+  opacity: var(--rolling-wide-label-in-opacity);
+  transform: var(--rolling-wide-label-in-transform) !important;
+}
+
+.rolling-primary.rolling-centered .rolling-arrow-outgoing {
+  left: var(--rolling-wide-arrow-out-left);
+  opacity: var(--rolling-wide-arrow-out-opacity);
+  transform: var(--rolling-wide-arrow-out-transform);
+}
+
+.rolling-primary.rolling-centered .rolling-arrow-incoming {
+  left: var(--rolling-wide-arrow-in-left);
+  opacity: var(--rolling-wide-arrow-in-opacity);
+  transform: var(--rolling-wide-arrow-in-transform);
+}
+
+.rolling-primary[data-rolling-kind="white"] .rolling-label-incoming {
+  left: -63px !important;
+  right: auto !important;
+  opacity: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="white"] .rolling-arrow-incoming {
+  display: none;
+}
+
+.rolling-primary[data-rolling-kind="white"] .rolling-arrow-outgoing {
+  left: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="white"][data-rolling-variant="1"] .rolling-label-outgoing {
+  left: auto !important;
+  right: 16px !important;
+  opacity: 1 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="white"][data-rolling-variant="2"] .rolling-label-outgoing {
+  left: 50% !important;
+  right: auto !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"] .rolling-label-incoming {
+  left: -77px !important;
+  right: auto !important;
+  opacity: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"] .rolling-arrow-outgoing {
+  left: 49% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"] .rolling-arrow-incoming {
+  left: -121px !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"] .rolling-label-outgoing {
+  left: auto !important;
+  right: 20px !important;
+  opacity: 1 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="2"] .rolling-label-outgoing {
+  left: 50% !important;
+  right: auto !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="white"][data-rolling-variant="1"]:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 8px !important;
+  opacity: 1 !important;
+}
+
+.rolling-primary[data-rolling-kind="white"][data-rolling-variant="1"]:is(:hover, :focus-visible) .rolling-label-outgoing {
+  left: auto !important;
+  right: -58px !important;
+  opacity: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="white"][data-rolling-variant="2"]:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="white"][data-rolling-variant="2"]:is(:hover, :focus-visible) .rolling-label-outgoing {
+  left: auto !important;
+  right: -209px !important;
+  opacity: 1 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 11px !important;
+  opacity: 1 !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(:hover, :focus-visible) .rolling-label-outgoing {
+  left: auto !important;
+  right: -76px !important;
+  opacity: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(:hover, :focus-visible) .rolling-arrow-outgoing {
+  left: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(:hover, :focus-visible) .rolling-arrow-incoming {
+  left: 51% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="2"]:is(:hover, :focus-visible) .rolling-label-incoming {
+  left: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="2"]:is(:hover, :focus-visible) .rolling-label-outgoing {
+  left: auto !important;
+  right: -118px !important;
+  opacity: 0 !important;
+  transform: translate(18px, -50%) !important;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="2"]:is(:hover, :focus-visible) .rolling-arrow-outgoing {
+  left: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* The live button has one visible arrow. The arrow rail rides the expanding
+   fill, keeping the glyph centered at rest and at the far edge on hover. */
+.rolling-primary[data-rolling-kind="red"] .rolling-arrow-rail {
+  right: 0;
+}
+
+.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible) .rolling-well {
+  width: 100% !important;
+  height: 45px !important;
+  flex: 1 0 1px !important;
+  padding: 1px !important;
+  border-radius: 14px;
+}
+
+.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible) .rolling-fill {
+  width: 100% !important;
+  height: 43px !important;
+  flex: 1 0 100% !important;
+  padding: 4px 0 !important;
+  border-radius: 13px;
+}
+
+.rolling-primary[data-rolling-kind="red"][data-rolling-variant="2"]:is(:hover, :focus-visible) .rolling-arrow-incoming {
+  left: 51% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary:not(.rolling-red):is(:hover, :focus-visible) .rolling-arrow-outgoing {
+  left: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.rolling-primary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.rolling-secondary {
+  position: relative;
+  height: 48px;
+  min-height: 48px;
+  width: max-content;
+  padding: 6px 24px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible;
+  border: 0;
+  border-radius: 16px;
+  background: var(--rolling-secondary-bg, #303030);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), inset 0 14px 4px rgba(255, 255, 255, .02);
+  font: 500 16px/24px var(--sans);
+  letter-spacing: -.02em;
+  text-align: center !important;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .4s var(--rolling-spring, linear(0, .509 10%, .833 20%, .976 30%, 1.013 40%, 1.011 55%, 1.001 75%, 1));
+}
+
+.rolling-secondary:is(:hover, :focus-visible) {
+  background: var(--rolling-secondary-hover, #3d3d3d);
+  transform: none;
+}
+
+.rolling-secondary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .rolling-primary, .rolling-primary *, .rolling-secondary {
+    transition: none !important;
+  }
+}
