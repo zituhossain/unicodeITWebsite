@@ -2330,8 +2330,8 @@ button[data-form-state] > i {
   align-items: center;
   gap: 8px;
   color: rgba(255, 255, 255, 0.8);
-  font: 500 15px/21px var(--sans);
-  letter-spacing: 0;
+  font: 500 18px/27px var(--sans);
+  letter-spacing: -0.18px;
 }
 
 .live-contactHero .live-contactBenefits img {
@@ -2373,28 +2373,28 @@ button[data-form-state] > i {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #b3b3b3;
-  font: 500 11px/16px var(--sans);
+  color: rgba(255, 255, 255, 0.7);
+  font: 500 13px/18px var(--sans);
   overflow-wrap: anywhere;
 }
 
 .live-contactHero .live-callCard > p {
-  color: #d6d6d6;
-  font: 500 16px/23px var(--sans);
+  color: rgba(255, 255, 255, 0.8);
+  font: 500 18px / 27px var(--sans);
 }
 
 .live-contactHero > .contact-live-form > .contact-privacy-note {
-  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, 0.5);
   min-height: 17px;
-  margin: -14px 0 0;
-  color: #777;
-  font: 500 11px/17px var(--sans);
+  font: 500 13px / 19px var(--sans);
   letter-spacing: 0;
+  grid-column: 1 / -1;
+  margin: -14px 0 0;
 }
 
 .live-contactDirectBar {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   right: var(--contact-edge);
   bottom: 128px;
   width: clamp(610px, 44.444vw, 640px);
@@ -2402,15 +2402,29 @@ button[data-form-state] > i {
   box-sizing: border-box;
   padding: 10px 12px 10px 16px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 170px 48px;
+  grid-template-columns: minmax(0, 1fr) 210px 48px;
   align-items: center;
   gap: 10px;
-  border: 1px solid #292929;
-  border-radius: 18px;
-  background: #101010;
+  border: 1px solid #212121;
+  border-radius: 20px;
+  background: #0f0f0f;
   box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    0 181px 51px rgba(0, 0, 0, 0),
+    0 116px 46px rgba(0, 0, 0, 0.03),
+    0 65px 39px rgba(0, 0, 0, 0.1),
+    0 29px 29px rgba(0, 0, 0, 0.18),
+    0 7px 16px rgba(0, 0, 0, 0.21);
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  background-blend-mode: normal;
+  isolation: isolate;
+}
+
+.live-contactDirectBar > * {
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .live-contactDirectBar > p {
@@ -2422,12 +2436,31 @@ button[data-form-state] > i {
 }
 
 .live-contactDirectBar > .live-contactDirectCall {
-  width: 170px;
-  min-width: 170px;
-  max-width: 170px;
+  width: 210px;
+  min-width: 210px;
+  max-width: 210px;
   height: 49px;
   min-height: 49px;
   margin: 0;
+  border: 1px solid #4a4a4a;
+  background: linear-gradient(180deg, #3d3d3d 0%, #343434 48%, #292929 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.5),
+    0 10px 16px rgba(0, 0, 0, 0.52),
+    0 2px 3px rgba(0, 0, 0, 0.72);
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.live-contactDirectBar > .live-contactDirectCall .rolling-well,
+.live-contactDirectBar > .live-contactDirectCall .rolling-fill,
+.live-contactDirectBar > .live-contactDirectCall .rolling-label-outgoing,
+.live-contactDirectBar > .live-contactDirectCall .rolling-arrow-outgoing {
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .live-contactWhatsApp {
@@ -2441,6 +2474,9 @@ button[data-form-state] > i {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 7px 12px rgba(0, 0, 0, 0.34);
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
   transition:
     background-color 200ms cubic-bezier(0.44, 0, 0.56, 1),
     transform 200ms cubic-bezier(0.44, 0, 0.56, 1);
@@ -2450,6 +2486,9 @@ button[data-form-state] > i {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .live-contactWhatsApp:hover,

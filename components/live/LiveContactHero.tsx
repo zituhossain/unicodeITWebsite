@@ -43,8 +43,7 @@ export function ContactHeroSection({
       <div className="live-contactIntro" data-contact-intro>
         <Kicker>Let&apos;s Connect</Kicker>
         <h1>
-          Start Your{" "}
-          <br />
+          Start Your <br />
           Next Project
         </h1>
         <ul className="live-contactBenefits">
@@ -78,7 +77,11 @@ export function ContactHeroSection({
 
 function ContactSocialProofCard() {
   return (
-    <aside className="live-callCard" data-contact-call aria-label="Aexo client proof">
+    <aside
+      className="live-callCard"
+      data-contact-call
+      aria-label="Aexo client proof"
+    >
       <div className="live-callAvatarRow">
         <img
           className="live-callAvatarImage"

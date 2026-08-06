@@ -96,7 +96,13 @@ function Hero() {
         <div className={`live-heroButtons fix-heroButtons`} data-hero="buttons">
           <LiveButton />
           <LiveButton href="#" dark>
-            Chat on Whatsapp
+            <img
+              className="fix-heroWhatsappIcon"
+              src="/assets/live/whatsapp.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span>Chat on Whatsapp</span>
           </LiveButton>
         </div>
       </div>

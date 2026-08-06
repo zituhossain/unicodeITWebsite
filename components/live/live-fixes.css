@@ -1022,10 +1022,17 @@ img[data-project-media][data-project-slug="cognefy"] {
   min-height: 48px;
   flex-basis: 139.33px;
   padding: 6px 24px;
+  gap: 8px;
   background: #303030;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     inset 0 14px 4px rgba(255, 255, 255, 0.02);
+}
+.fix-hero .fix-heroWhatsappIcon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  object-fit: contain;
 }
 .fix-heroSkills {
   width: 510px;
@@ -2095,7 +2102,14 @@ span.fix-partnerCopy {
   .fix-hero .fix-heroButtons > a:last-child {
     width: 139.33px;
     flex: 0 0 139.33px;
-    padding: 6px 24px;
+    padding: 6px 7px;
+    gap: 5px;
+    font-size: 12px;
+  }
+  .fix-hero .fix-heroWhatsappIcon {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
   }
   .fix-servicesIntroExact {
     padding: 50px 0 !important;
