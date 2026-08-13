@@ -230,6 +230,8 @@ export function FAQ() {
 }
 
 export function ScaleCTA() {
+  const external = calLink.startsWith("http");
+
   return (
     <section
       className={`live-scaleCtaExact shared-scale-cta`}
@@ -256,7 +258,44 @@ export function ScaleCTA() {
         <br />
         Scale Now
       </h2>
-      <LiveButton>Book A Call</LiveButton>
+      <Link
+        className="live-scaleCtaButton shared-button"
+        href={calLink}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noreferrer" : undefined}
+        data-cta-button
+        data-cta-copy="button"
+        aria-label="Book A Call"
+      >
+        <img
+          className="live-scaleCtaButtonBase shared-button-base"
+          src="/assets/live/tLjfMShN7yO3xsPZ9shk3oFC7vQ.png"
+          alt=""
+        />
+        <img
+          className="live-scaleCtaButtonShade shared-button-shade"
+          src="/assets/live/brand-cyan/f3uNp40z3hBKhBP8PvixWX6Ec.png"
+          alt=""
+        />
+        <img
+          className="live-scaleCtaButtonRim shared-button-rim"
+          src="/assets/live/brand-cyan/3UCVA7YJLIIkMmFFtKOUVphg4.png"
+          alt=""
+        />
+        <img
+          className="live-scaleCtaButtonTexture shared-button-texture"
+          src="/assets/live/HijDcUHfh1oK13Lzyg7cprrYtc.png"
+          alt=""
+        />
+        <i className="live-scaleCtaArrow shared-arrow" aria-hidden="true">
+          <img src="/assets/live/1y6UgkO1kcrhGN2gmns0SRzd9s8.png" alt="" />
+        </i>
+        <div aria-hidden="true">
+          <span className="live-scaleCtaButtonWell shared-button-well" />
+          <span className="live-scaleCtaButtonFill shared-button-fill" />
+        </div>
+        <span className="shared-button-text">Book A Call</span>
+      </Link>
     </section>
   );
 }

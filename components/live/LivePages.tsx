@@ -800,6 +800,7 @@ export function NotFoundLive() {
       <LiveButton href="/" centered>
         Back to Home Page
       </LiveButton>
+      <ScaleCTA />
     </main>
   );
 }
