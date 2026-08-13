@@ -979,7 +979,8 @@ button[data-form-state] > i {
 }
 
 /* All Works: confine hover treatment to the project image and use the compact shared CTA. */
-.live-allWorks > .fix-selectedCursor {
+.live-allWorks > .fix-selectedCursor,
+.fix-selectedWorksExact > .fix-selectedCursor {
   height: 44px;
   gap: 7px;
   padding: 4px 12px 4px 4px;
@@ -988,21 +989,24 @@ button[data-form-state] > i {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
-.live-allWorks > .fix-selectedCursor > i {
+.live-allWorks > .fix-selectedCursor > i,
+.fix-selectedWorksExact > .fix-selectedCursor > i {
   width: 36px;
   height: 36px;
   flex-basis: 36px;
   border-radius: 9px;
 }
 
-.live-allWorks > .fix-selectedCursor > i > b {
+.live-allWorks > .fix-selectedCursor > i > b,
+.fix-selectedWorksExact > .fix-selectedCursor > i > b {
   width: 32px;
   height: 32px;
   border-radius: 8px;
   background-size: 16px 16px;
 }
 
-.live-allWorks > .fix-selectedCursor > span {
+.live-allWorks > .fix-selectedCursor > span,
+.fix-selectedWorksExact > .fix-selectedCursor > span {
   font-size: 15px;
   line-height: 20px;
   letter-spacing: -0.3px;
