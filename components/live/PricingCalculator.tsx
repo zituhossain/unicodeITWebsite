@@ -71,7 +71,7 @@ function CustomScopeSection() {
           </div>
         </div>
         <div className="pricing-custom-scope-actions">
-          <LiveButton href="/contact">
+          <LiveButton href="/contact" className="pricing-book-call-button">
             Book A Call
           </LiveButton>
           <a className="pricing-whatsapp-link" href="#">
@@ -203,7 +203,12 @@ export function PricingCalculator() {
                   </span>
                   <b>{quote.discount}% OFF</b>
                 </div>
-                <LiveButton href={card.ctaHref}>{card.ctaLabel}</LiveButton>
+                <LiveButton
+                  href={card.ctaHref}
+                  className="pricing-book-call-button"
+                >
+                  {card.ctaLabel}
+                </LiveButton>
               </div>
               <ul>
                 {level.features[card.id].map((feature) => (

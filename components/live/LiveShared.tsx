@@ -18,8 +18,10 @@ export function LiveButton({
   className?: string;
 }) {
   const external = href.startsWith("http");
-  const normalizedLabel = typeof children === "string" ? children.trim().toLowerCase() : "";
-  const isBookCta = normalizedLabel === "book a free call" || normalizedLabel === "book a call";
+  const normalizedLabel =
+    typeof children === "string" ? children.trim().toLowerCase() : "";
+  const isBookCta =
+    normalizedLabel === "book a free call" || normalizedLabel === "book a call";
   const buttonClassName = `live-liveButton fix-liveButton ${isBookCta ? "live-bookCta" : ""} ${dark ? `live-darkButton fix-darkButton` : ""} ${className}`;
   if (!dark)
     return (
@@ -385,7 +387,7 @@ export function LiveFooter() {
             <i>
               <FooterSocialIcon kind="x" />
             </i>
-            <span>X / Twitter</span>
+            <span>X /Twitter</span>
           </a>
           <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
             <i>

@@ -3951,11 +3951,11 @@ html[data-motion="paused"] .fix-selectedBoltWhite {
     min-height: 0;
     overflow: hidden;
     isolation: isolate;
-    background: radial-gradient(
-      ellipse at 50% 12%,
-      var(--brand-deep) 0,
-      #0a0a0a 48%
-    );
+    background:
+      radial-gradient(ellipse at 0% 64%, var(--brand-alpha-08) 0, transparent 42%),
+      radial-gradient(ellipse at 100% 64%, var(--brand-alpha-08) 0, transparent 42%),
+      radial-gradient(ellipse at 50% 12%, rgb(255 255 255 / 0.03) 0, transparent 46%),
+      var(--ink);
     color: #fff;
   }
 
@@ -5084,6 +5084,65 @@ body
   right: -76px !important;
   opacity: 0 !important;
   transform: translateY(-50%) !important;
+}
+
+body
+  .live-pricingRouteSection
+  .live-liveButton.live-bookCta.pricing-book-call-button.rolling-primary[data-rolling-kind="red"] {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+}
+
+body
+  .live-pricingRouteSection
+  .live-liveButton.live-bookCta.pricing-book-call-button.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible,
+    :active
+  ) {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+body
+  .live-pricingRouteSection
+  .live-liveButton.live-bookCta.pricing-book-call-button.rolling-primary[data-rolling-kind="red"]
+  > .rolling-label-outgoing {
+  left: 50% !important;
+  right: auto !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+body
+  .live-pricingRouteSection
+  .live-liveButton.live-bookCta.pricing-book-call-button.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible,
+    :active
+  )
+  > .rolling-label-outgoing {
+  left: auto !important;
+  right: -76px !important;
+  opacity: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+body
+  .live-pricingRouteSection
+  .pricing-card
+  .live-liveButton.live-bookCta.pricing-book-call-button.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible,
+    :active
+  )
+  .rolling-label-incoming {
+  left: 50% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 /* Comparison reference table (2025 rebuild). */
