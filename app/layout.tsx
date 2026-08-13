@@ -6,11 +6,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aexo.design"),
-  title: { default: "Aexo — Independent Creative Studio", template: "%s — Aexo" },
-  description: "Independent creative studio building bold brands and digital experiences.",
+  title: { default: "UnicodeIT", template: "%s — Aexo" },
+  description:
+    "Independent creative studio building bold brands and digital experiences.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
