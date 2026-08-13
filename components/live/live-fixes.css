@@ -1014,7 +1014,8 @@ img[data-project-media][data-project-slug="cognefy"] {
   opacity: 0;
 }
 .fix-hero .fix-heroButtons > a:last-child:hover {
-  transform: none;
+  background: var(--rolling-secondary-hover, #3d3d3d);
+  transform: translateY(-2px);
 }
 .fix-hero .fix-heroButtons > a:last-child {
   width: 100%;
@@ -1465,6 +1466,10 @@ span.fix-partnerCopy {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     inset 0 14px 4px rgba(255, 255, 255, 0.02);
+}
+.fix-introButtons > a:last-child:is(:hover, :focus-visible) {
+  background: var(--rolling-secondary-hover, #3d3d3d);
+  transform: translateY(-2px) !important;
 }
 .fix-introCircleClip {
   position: absolute;
@@ -4863,31 +4868,9 @@ html[data-motion="paused"] .fix-selectedBoltWhite {
   }
 }
 
-/* Book-call CTA source of truth: keep every red LiveButton on the same
-   variant as the homepage hero CTA, regardless of section/card wrappers. */
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"] {
-  --rolling-spring: linear(
-    0,
-    0.08 10%,
-    0.18 15%,
-    0.54 25%,
-    0.96 35%,
-    1.006 45%,
-    1.016 55%,
-    1.01 65%,
-    1.002 80%,
-    1
-  );
-  --book-opacity-spring: linear(
-    0,
-    0.04 10%,
-    0.09 15%,
-    0.54 25%,
-    0.96 35%,
-    1 45%,
-    1
-  );
+/* Shared Book CTA: mirrors the header Contact rolling well, slightly slower. */
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"] {
+  --book-roll-duration: 520ms;
   width: 185px !important;
   min-width: 185px !important;
   max-width: 185px !important;
@@ -4905,14 +4888,12 @@ body
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     0 11px 10px rgba(0, 0, 0, 0.8),
     inset 0 -2px 1px rgba(0, 0, 0, 0.4) !important;
-  color: #fff !important;
   overflow: hidden !important;
-  text-align: left !important;
   transform: none !important;
+  transition: none !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::before {
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::before {
   content: "" !important;
   position: absolute !important;
   z-index: -1 !important;
@@ -4923,69 +4904,93 @@ body
   pointer-events: none !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::after {
+  content: none !important;
+}
+
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-well {
   position: absolute !important;
-  z-index: 1 !important;
+  z-index: 2 !important;
   left: 6px !important;
   top: 6px !important;
   width: 37px !important;
   height: 37px !important;
   flex: 0 0 auto !important;
+  padding: 1px !important;
   border-radius: 10px !important;
   background: var(--brand) !important;
+  transform: none !important;
+  will-change: left, top, width, height, border-radius;
   transition:
-    width 0.4s var(--rolling-spring),
-    height 0.4s var(--rolling-spring),
-    border-radius 0.4s var(--rolling-spring),
-    box-shadow 0.4s var(--rolling-spring) !important;
+    left var(--book-roll-duration) var(--rolling-spring),
+    top var(--book-roll-duration) var(--rolling-spring),
+    width var(--book-roll-duration) var(--rolling-spring),
+    height var(--book-roll-duration) var(--rolling-spring),
+    border-radius var(--book-roll-duration) var(--rolling-spring),
+    box-shadow var(--book-roll-duration) var(--rolling-spring) !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
-  > .rolling-well
-  > .rolling-fill {
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+  > .rolling-well > .rolling-fill {
   width: 35px !important;
   height: 35px !important;
   flex: 0 0 auto !important;
   padding: 0 !important;
   border-radius: 10px !important;
+  transform: none !important;
+  will-change: width, height, padding, border-radius;
   transition:
-    width 0.4s var(--rolling-spring),
-    height 0.4s var(--rolling-spring),
-    border-radius 0.4s var(--rolling-spring),
-    padding 0.4s var(--rolling-spring) !important;
+    width var(--book-roll-duration) var(--rolling-spring),
+    height var(--book-roll-duration) var(--rolling-spring),
+    padding var(--book-roll-duration) var(--rolling-spring),
+    border-radius var(--book-roll-duration) var(--rolling-spring) !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+  .rolling-arrow-rail {
+  position: absolute !important;
+  inset: auto 0 auto auto !important;
+  top: 50% !important;
+  width: 35px !important;
+  height: 35px !important;
+  transform: translateY(-50%) !important;
+  transition: none !important;
+}
+
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+  .rolling-arrow-outgoing {
+  left: 50% !important;
+  top: 50% !important;
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) !important;
+  transition: none !important;
+}
+
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-label {
   width: max-content !important;
   max-width: none !important;
   height: auto !important;
   flex: none !important;
-  display: block !important;
   overflow: visible !important;
-  color: inherit;
   font: 500 16px/24px var(--sans) !important;
   letter-spacing: -0.02em !important;
-  text-align: left !important;
-  text-overflow: clip !important;
   white-space: nowrap !important;
   pointer-events: none !important;
+  will-change: left, right, opacity, transform;
   transition:
-    left 0.4s var(--rolling-spring),
-    right 0.4s var(--rolling-spring),
-    opacity 0.4s var(--book-opacity-spring),
-    transform 0.4s var(--rolling-spring) !important;
+    left var(--book-roll-duration) var(--rolling-spring),
+    right var(--book-roll-duration) var(--rolling-spring),
+    opacity var(--book-roll-duration) var(--rolling-spring),
+    transform var(--book-roll-duration) var(--rolling-spring) !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-label-outgoing {
+  display: block !important;
   position: absolute !important;
-  z-index: 2 !important;
+  z-index: 3 !important;
   left: auto !important;
   right: 20px !important;
   top: 49% !important;
@@ -4994,11 +4999,11 @@ body
   transform: translateY(-50%) !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-label-incoming {
+  display: block !important;
   position: absolute !important;
-  z-index: 2 !important;
+  z-index: 3 !important;
   left: -77px !important;
   right: auto !important;
   top: 49% !important;
@@ -5007,73 +5012,42 @@ body
   transform: translateY(-50%) !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
-    :hover,
-    :focus,
-    :focus-visible,
-    :active
-  ) {
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible) {
   width: 185px !important;
   min-width: 185px !important;
   max-width: 185px !important;
-  flex-basis: auto !important;
-  padding: 2px !important;
+  height: 49px !important;
+  min-height: 49px !important;
+  padding: 6px 20px 6px 6px !important;
   transform: none !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
-    :hover,
-    :focus,
-    :focus-visible,
-    :active
-  )
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
   > .rolling-well {
   left: 2px !important;
   top: 2px !important;
   width: calc(100% - 4px) !important;
   height: 45px !important;
-  flex: 0 0 auto !important;
+  padding: 1px !important;
   border-radius: 14px !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
-    :hover,
-    :focus,
-    :focus-visible,
-    :active
-  )
-  > .rolling-well
-  > .rolling-fill {
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
+  > .rolling-well > .rolling-fill {
   width: 100% !important;
   height: 43px !important;
-  flex: 0 0 auto !important;
   padding: 4px 0 !important;
   border-radius: 13px !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
-    :hover,
-    :focus,
-    :focus-visible,
-    :active
-  )
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
   .rolling-label-incoming {
   left: 11px !important;
   opacity: 1 !important;
   transform: translateY(-50%) !important;
 }
 
-body
-  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
-    :hover,
-    :focus,
-    :focus-visible,
-    :active
-  )
+body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
   > .rolling-label-outgoing {
   left: auto !important;
   right: -76px !important;
