@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aexo.design"),
-  title: { default: "UnicodeIT", template: "%s — Aexo" },
+  title: { default: "UnicodeIT", template: "%s — UnicodeIT" },
   description:
     "Independent creative studio building bold brands and digital experiences.",
 };
