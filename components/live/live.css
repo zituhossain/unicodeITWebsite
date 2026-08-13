@@ -10298,6 +10298,7 @@ html[data-motion="paused"] .live-kicker > i::before {
   overflow: visible;
   border-radius: 20px;
   background: #1a1a1a;
+  padding: 4px;
 }
 
 .live-servicesExact .live-serviceCardTop {
@@ -10312,6 +10313,7 @@ html[data-motion="paused"] .live-kicker > i::before {
     url("/assets/live/brand-cyan/vhYgDTNFd4rsboSMqUHqHGCWWQ.png") center/cover
     no-repeat;
   border-radius: 20px;
+  border-bottom: 1px solid #3d3d3d;
 }
 
 .live-servicesExact .live-serviceIcon {

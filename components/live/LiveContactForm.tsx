@@ -307,8 +307,8 @@ export function LiveContactForm() {
         centered
         data-form-state={state}
         type="submit"
-        disabled={!isValid || state === "sending"}
-        aria-disabled={!isValid || state === "sending"}
+        disabled={state === "sending"}
+        aria-disabled={state === "sending"}
         aria-busy={state === "sending"}
       >
         {buttonLabel}

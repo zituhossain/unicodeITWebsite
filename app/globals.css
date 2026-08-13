@@ -2330,7 +2330,7 @@ button[data-form-state] > i {
   align-items: center;
   gap: 8px;
   color: rgba(255, 255, 255, 0.8);
-  font: 500 18px/27px var(--sans);
+  font: 400 18px/27px var(--sans);
   letter-spacing: -0.18px;
 }
 
@@ -2396,11 +2396,11 @@ button[data-form-state] > i {
   position: absolute;
   z-index: 5;
   right: var(--contact-edge);
-  bottom: 128px;
+  bottom: 110px;
   width: clamp(610px, 44.444vw, 640px);
-  min-height: 70px;
+  min-height: 88px;
   box-sizing: border-box;
-  padding: 10px 12px 10px 16px;
+  padding: 20px 12px 20px 16px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 210px 48px;
   align-items: center;
@@ -2428,11 +2428,11 @@ button[data-form-state] > i {
 }
 
 .live-contactDirectBar > p {
+  color: #ffffff;
   min-width: 0;
+  font: 600 18px / 21.6px var(--sans);
+  letter-spacing: -0.36px;
   margin: 0;
-  color: #f4f4f4;
-  font: 600 15px/21px var(--sans);
-  letter-spacing: 0;
 }
 
 .live-contactDirectBar > .live-contactDirectCall {
@@ -2517,7 +2517,7 @@ button[data-form-state] > i {
   }
 
   .live-contactIntro > .live-callCard {
-    top: 390px;
+    top: 427px;
     width: 390px;
     min-height: 0;
     padding: 22px;

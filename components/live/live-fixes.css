@@ -1297,7 +1297,7 @@ span.fix-partnerCopy {
   position: absolute;
   z-index: -1;
   inset: 0 10px;
-  background: #0a0a0a;
+  background: rgba(10, 10, 10, 0.5);
 }
 .fix-partnerGridTop,
 .fix-partnerGridBottom {
@@ -4893,7 +4893,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"] {
   transition: none !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::before {
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::before {
   content: "" !important;
   position: absolute !important;
   z-index: -1 !important;
@@ -4904,11 +4905,13 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::bef
   pointer-events: none !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::after {
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::after {
   content: none !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-well {
   position: absolute !important;
   z-index: 2 !important;
@@ -4931,8 +4934,10 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
     box-shadow var(--book-roll-duration) var(--rolling-spring) !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
-  > .rolling-well > .rolling-fill {
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+  > .rolling-well
+  > .rolling-fill {
   width: 35px !important;
   height: 35px !important;
   flex: 0 0 auto !important;
@@ -4947,7 +4952,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
     border-radius var(--book-roll-duration) var(--rolling-spring) !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-arrow-rail {
   position: absolute !important;
   inset: auto 0 auto auto !important;
@@ -4958,7 +4964,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   transition: none !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-arrow-outgoing {
   left: 50% !important;
   top: 50% !important;
@@ -4967,7 +4974,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   transition: none !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-label {
   width: max-content !important;
   max-width: none !important;
@@ -4986,7 +4994,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
     transform var(--book-roll-duration) var(--rolling-spring) !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-label-outgoing {
   display: block !important;
   position: absolute !important;
@@ -4999,7 +5008,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   transform: translateY(-50%) !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-label-incoming {
   display: block !important;
   position: absolute !important;
@@ -5012,7 +5022,11 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   transform: translateY(-50%) !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible) {
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible
+  ) {
   width: 185px !important;
   min-width: 185px !important;
   max-width: 185px !important;
@@ -5022,7 +5036,11 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:
   transform: none !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible
+  )
   > .rolling-well {
   left: 2px !important;
   top: 2px !important;
@@ -5032,22 +5050,35 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:
   border-radius: 14px !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
-  > .rolling-well > .rolling-fill {
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible
+  )
+  > .rolling-well
+  > .rolling-fill {
   width: 100% !important;
   height: 43px !important;
   padding: 4px 0 !important;
   border-radius: 13px !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible
+  )
   .rolling-label-incoming {
   left: 11px !important;
   opacity: 1 !important;
   transform: translateY(-50%) !important;
 }
 
-body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:hover, :focus-visible)
+body
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
+    :hover,
+    :focus-visible
+  )
   > .rolling-label-outgoing {
   left: auto !important;
   right: -76px !important;
@@ -5421,7 +5452,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:
 }
 
 .live-faqGridExact .faq-card .faq-question {
-  transition: padding var(--faq-transition-duration) var(--faq-transition-easing);
+  transition: padding var(--faq-transition-duration)
+    var(--faq-transition-easing);
 }
 
 .live-faqGridExact .faq-card.faq-open .faq-question {
@@ -5438,7 +5470,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:
   opacity: 0;
   pointer-events: none;
   transition:
-    grid-template-rows var(--faq-transition-duration) var(--faq-transition-easing),
+    grid-template-rows var(--faq-transition-duration)
+      var(--faq-transition-easing),
     margin-top var(--faq-transition-duration) var(--faq-transition-easing),
     opacity var(--faq-transition-duration) var(--faq-transition-easing);
 }
@@ -5467,7 +5500,8 @@ body .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(:
   width: 14px !important;
   height: 2px !important;
   transform: translate(-50%, -50%) rotate(0deg) !important;
-  transition: transform var(--faq-transition-duration) var(--faq-transition-easing);
+  transition: transform var(--faq-transition-duration)
+    var(--faq-transition-easing);
 }
 
 .live-faqGridExact .faq-plus > span:last-child {
