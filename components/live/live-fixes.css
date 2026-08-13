@@ -4866,7 +4866,28 @@ html[data-motion="paused"] .fix-selectedBoltWhite {
 /* Book-call CTA source of truth: keep every red LiveButton on the same
    variant as the homepage hero CTA, regardless of section/card wrappers. */
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"] {
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"] {
+  --rolling-spring: linear(
+    0,
+    0.08 10%,
+    0.18 15%,
+    0.54 25%,
+    0.96 35%,
+    1.006 45%,
+    1.016 55%,
+    1.01 65%,
+    1.002 80%,
+    1
+  );
+  --book-opacity-spring: linear(
+    0,
+    0.04 10%,
+    0.09 15%,
+    0.54 25%,
+    0.96 35%,
+    1 45%,
+    1
+  );
   width: 185px !important;
   min-width: 185px !important;
   max-width: 185px !important;
@@ -4891,7 +4912,7 @@ body
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]::before {
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]::before {
   content: "" !important;
   position: absolute !important;
   z-index: -1 !important;
@@ -4903,30 +4924,42 @@ body
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-well {
-  position: relative !important;
+  position: absolute !important;
   z-index: 1 !important;
+  left: 6px !important;
+  top: 6px !important;
   width: 37px !important;
   height: 37px !important;
-  flex: 0 0 37px !important;
+  flex: 0 0 auto !important;
   border-radius: 10px !important;
   background: var(--brand) !important;
+  transition:
+    width 0.4s var(--rolling-spring),
+    height 0.4s var(--rolling-spring),
+    border-radius 0.4s var(--rolling-spring),
+    box-shadow 0.4s var(--rolling-spring) !important;
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-well
   > .rolling-fill {
   width: 35px !important;
   height: 35px !important;
-  flex: 0 0 35px !important;
+  flex: 0 0 auto !important;
   padding: 0 !important;
   border-radius: 10px !important;
+  transition:
+    width 0.4s var(--rolling-spring),
+    height 0.4s var(--rolling-spring),
+    border-radius 0.4s var(--rolling-spring),
+    padding 0.4s var(--rolling-spring) !important;
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-label {
   width: max-content !important;
   max-width: none !important;
@@ -4941,10 +4974,15 @@ body
   text-overflow: clip !important;
   white-space: nowrap !important;
   pointer-events: none !important;
+  transition:
+    left 0.4s var(--rolling-spring),
+    right 0.4s var(--rolling-spring),
+    opacity 0.4s var(--book-opacity-spring),
+    transform 0.4s var(--rolling-spring) !important;
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   > .rolling-label-outgoing {
   position: absolute !important;
   z-index: 2 !important;
@@ -4957,7 +4995,7 @@ body
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]
   .rolling-label-incoming {
   position: absolute !important;
   z-index: 2 !important;
@@ -4970,36 +5008,38 @@ body
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
     :hover,
     :focus,
     :focus-visible,
     :active
   ) {
-  width: 170px !important;
-  min-width: 170px !important;
-  max-width: 170px !important;
+  width: 185px !important;
+  min-width: 185px !important;
+  max-width: 185px !important;
   flex-basis: auto !important;
   padding: 2px !important;
   transform: none !important;
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
     :hover,
     :focus,
     :focus-visible,
     :active
   )
   > .rolling-well {
-  width: 100% !important;
+  left: 2px !important;
+  top: 2px !important;
+  width: calc(100% - 4px) !important;
   height: 45px !important;
-  flex: 1 0 1px !important;
+  flex: 0 0 auto !important;
   border-radius: 14px !important;
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
     :hover,
     :focus,
     :focus-visible,
@@ -5009,13 +5049,13 @@ body
   > .rolling-fill {
   width: 100% !important;
   height: 43px !important;
-  flex: 1 0 100% !important;
+  flex: 0 0 auto !important;
   padding: 4px 0 !important;
   border-radius: 13px !important;
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
     :hover,
     :focus,
     :focus-visible,
@@ -5028,7 +5068,7 @@ body
 }
 
 body
-  .live-liveButton.rolling-primary[data-rolling-kind="red"][data-rolling-variant="1"]:is(
+  .live-liveButton.live-bookCta.rolling-primary[data-rolling-kind="red"]:is(
     :hover,
     :focus,
     :focus-visible,

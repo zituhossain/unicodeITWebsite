@@ -18,7 +18,9 @@ export function LiveButton({
   className?: string;
 }) {
   const external = href.startsWith("http");
-  const buttonClassName = `live-liveButton fix-liveButton ${dark ? `live-darkButton fix-darkButton` : ""} ${className}`;
+  const normalizedLabel = typeof children === "string" ? children.trim().toLowerCase() : "";
+  const isBookCta = normalizedLabel === "book a free call" || normalizedLabel === "book a call";
+  const buttonClassName = `live-liveButton fix-liveButton ${isBookCta ? "live-bookCta" : ""} ${dark ? `live-darkButton fix-darkButton` : ""} ${className}`;
   if (!dark)
     return (
       <RollingPrimaryLink
@@ -27,7 +29,7 @@ export function LiveButton({
         rel={external ? "noreferrer" : undefined}
         variant="wide"
         tone="red"
-        centered={centered}
+        centered={isBookCta ? false : centered}
         className={buttonClassName}
       >
         {children}

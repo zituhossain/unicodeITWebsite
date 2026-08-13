@@ -11063,58 +11063,6 @@ html[data-motion="paused"] .live-kicker > i::before {
   }
 }
 
-/* Benefits final CTA uses the shared homepage Book a Free Call button. */
-.live-benefitsExact .live-elevateCta {
-  width: 100%;
-  min-width: 0;
-  max-width: none;
-  height: 49px;
-  min-height: 49px;
-  flex: 0 0 49px;
-  align-self: stretch;
-  padding: 6px 20px 6px 6px;
-  justify-content: flex-start;
-  gap: 11px;
-  border: 0;
-  border-radius: 16px;
-  background: transparent;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 11px 10px rgba(0, 0, 0, 0.8),
-    inset 0 -2px 1px rgba(0, 0, 0, 0.4);
-  color: #fff;
-  overflow: hidden;
-  text-align: left;
-  transform: none;
-}
-
-.live-benefitsExact .live-elevateCta::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  border-radius: inherit;
-  background: #fff url("/assets/live/RwRiFlRDdKjQVWAfTvgN6lyW4Pw.png")
-    center/100% 100% no-repeat;
-  pointer-events: none;
-}
-
-.live-benefitsExact .live-elevateCta:is(:hover, :focus-visible, :active) {
-  width: 100%;
-  min-width: 0;
-  max-width: none;
-  padding: 2px;
-  border-radius: 16px;
-  background: transparent;
-  transform: none;
-}
-
-.live-benefitsExact .live-elevateCta .rolling-label {
-  max-width: calc(100% - 64px);
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-}
 /* Benefits CTA card internals also need their source positioning outside the
    desktop-only block so the mobile card keeps the radar, availability pill,
    copy, and hand in the intended composition. */
