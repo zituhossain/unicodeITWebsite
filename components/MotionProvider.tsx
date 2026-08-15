@@ -373,7 +373,7 @@ export function MotionProvider() {
               ease: "power3.out",
               scrollTrigger: {
                 trigger: element,
-                start: reveal.start,
+                start: element.dataset.revealStart ?? reveal.start,
                 toggleActions: element.dataset.once === "false" || reveal.reverse ? "play reverse play reverse" : "play none none none",
               },
             });

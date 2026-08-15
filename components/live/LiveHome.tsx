@@ -426,8 +426,12 @@ function Services() {
           that help your business move faster and grow with confidence.
         </p>
         <div className="live-serviceMajorExact">
-          {cards.map((card) => (
-            <article data-reveal key={card.title}>
+          {cards.map((card, index) => (
+            <article
+              data-reveal
+              data-reveal-start={index >= 3 ? "top 88%" : undefined}
+              key={card.title}
+            >
               <div className="live-serviceCardTop">
                 <ServiceIcon kind={card.icon} />
                 <div>
