@@ -1717,6 +1717,7 @@
   .live-trustPill {
     font-size: 12px;
     white-space: nowrap;
+    margin-bottom: -15px;
   }
   .live-trustPill span {
     letter-spacing: 1px;
