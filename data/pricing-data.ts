@@ -1,3 +1,5 @@
+import { CALENDLY_URL } from "@/lib/calendly";
+
 export type PricingCardId = "design" | "development" | "combined";
 export type PricingIcon = "pen" | "code" | "screen";
 
@@ -107,7 +109,7 @@ function cards(
   return definitions.map((definition) => ({
     ...definition,
     ctaLabel: "Book A Call",
-    ctaHref: "/contact",
+    ctaHref: CALENDLY_URL,
   }));
 }
 

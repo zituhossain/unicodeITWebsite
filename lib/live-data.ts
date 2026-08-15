@@ -1,4 +1,5 @@
 import { workListingProjects } from "@/data/projects";
+import { CALENDLY_URL } from "@/lib/calendly";
 
 export const liveServices = [
   {
@@ -86,7 +87,7 @@ export const liveServices = [
     ],
   },
 ] as const;
-export const calLink = "#";
+export const calLink = CALENDLY_URL;
 
 export const liveNavigation = [
   { label: "Services", href: "/#what-we-do" },

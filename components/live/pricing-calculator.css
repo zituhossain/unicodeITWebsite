@@ -33,7 +33,6 @@
   margin: 0 auto 28px;
   padding: 6px 6px 6px 20px;
   display: flex;
-  letter-spacing: -0.32px;
 }
 
 .pricing-promotion strong {
@@ -43,8 +42,9 @@
   border-radius: 80px;
   padding: 5px 12px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 19.6px;
+  letter-spacing: 0.8px;
 }
 
 .pricing-tabs {

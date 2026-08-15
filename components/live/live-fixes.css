@@ -483,7 +483,6 @@
   text-align: center;
   letter-spacing: -1.08px;
   font-family: Tanker;
-  font-size: 78px;
   font-style: normal;
   font-weight: 400;
   line-height: 78px;
@@ -516,7 +515,7 @@
   text-align: center;
   flex: 0 0 51px;
   width: 32%;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.7) !important;
   margin: 0 0 55px !important;
   font-size: 17px !important;
@@ -1291,13 +1290,14 @@ span.fix-partnerCopy {
   width: 100%;
   height: 300px;
   overflow: hidden;
+  top: 50px;
 }
 .fix-partnerGrid::before {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0 10px;
-  background: rgba(10, 10, 10, 0.5);
+  /* background: rgba(10, 10, 10, 0.5); */
 }
 .fix-partnerGridTop,
 .fix-partnerGridBottom {
@@ -2972,7 +2972,7 @@ html[data-motion="paused"] .fix-selectedBoltWhite {
   width: min(648px, calc(100% - 40px));
   margin: 20px auto 60px;
   color: rgba(255, 255, 255, 0.7);
-  font: 500 clamp(16px, 1.55vw, 17px) / 1.5 var(--sans);
+  font: 400 clamp(16px, 1.55vw, 17px) / 1.5 var(--sans);
   letter-spacing: -0.17px;
   text-align: center;
 }
@@ -3952,9 +3952,21 @@ html[data-motion="paused"] .fix-selectedBoltWhite {
     overflow: hidden;
     isolation: isolate;
     background:
-      radial-gradient(ellipse at 0% 64%, var(--brand-alpha-08) 0, transparent 42%),
-      radial-gradient(ellipse at 100% 64%, var(--brand-alpha-08) 0, transparent 42%),
-      radial-gradient(ellipse at 50% 12%, rgb(255 255 255 / 0.03) 0, transparent 46%),
+      radial-gradient(
+        ellipse at 0% 64%,
+        var(--brand-alpha-08) 0,
+        transparent 42%
+      ),
+      radial-gradient(
+        ellipse at 100% 64%,
+        var(--brand-alpha-08) 0,
+        transparent 42%
+      ),
+      radial-gradient(
+        ellipse at 50% 12%,
+        rgb(255 255 255 / 0.03) 0,
+        transparent 46%
+      ),
       var(--ink);
     color: #fff;
   }
@@ -5150,9 +5162,21 @@ body
   isolation: isolate;
   border-radius: 20px;
   background:
-    radial-gradient(ellipse at 8% 54%, var(--brand-alpha-15) 0, transparent 38%),
-    radial-gradient(ellipse at 92% 54%, var(--brand-alpha-15) 0, transparent 38%),
-    radial-gradient(ellipse at 50% 44%, var(--brand-alpha-10) 0, transparent 56%),
+    radial-gradient(
+      ellipse at 8% 54%,
+      var(--brand-alpha-15) 0,
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 92% 54%,
+      var(--brand-alpha-15) 0,
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 50% 44%,
+      var(--brand-alpha-10) 0,
+      transparent 56%
+    ),
     linear-gradient(180deg, var(--brand-dark) 0%, #090c0b 56%, #141414 100%);
   box-shadow:
     0 28px 72px rgba(0, 0, 0, 0.32),
@@ -5171,7 +5195,11 @@ body
 
 .live-pricingRouteSection .live-pricingQuoteStage {
   background:
-    radial-gradient(ellipse at 50% 108%, var(--brand-alpha-15) 0, transparent 54%),
+    radial-gradient(
+      ellipse at 50% 108%,
+      var(--brand-alpha-15) 0,
+      transparent 54%
+    ),
     linear-gradient(180deg, rgb(5 13 12 / 0.96), rgb(7 10 9 / 0.92));
 }
 

@@ -2384,7 +2384,7 @@ button[data-form-state] > i {
 
 .live-contactHero .live-callCard > p {
   color: rgba(255, 255, 255, 0.8);
-  font: 500 18px / 27px var(--sans);
+  font: 400 18px / 27px var(--sans);
 }
 
 .live-contactHero > .contact-live-form > .contact-privacy-note {

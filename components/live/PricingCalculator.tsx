@@ -1,6 +1,11 @@
 "use client";
 
-import { useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
+import {
+  useRef,
+  useState,
+  type CSSProperties,
+  type KeyboardEvent,
+} from "react";
 import {
   pricingCategories,
   pricingCurrency,
@@ -33,7 +38,6 @@ function controlValueText(category: PricingCategory, levelIndex: number) {
   }
   return level.label;
 }
-
 
 function CustomScopeSection() {
   return (
@@ -71,7 +75,10 @@ function CustomScopeSection() {
           </div>
         </div>
         <div className="pricing-custom-scope-actions">
-          <LiveButton href="/contact" className="pricing-book-call-button">
+          <LiveButton
+            href="https://calendly.com/contact-unicodeit/30min"
+            className="pricing-book-call-button"
+          >
             Book A Call
           </LiveButton>
           <a className="pricing-whatsapp-link" href="#">
@@ -125,7 +132,11 @@ export function PricingCalculator() {
         <strong>{pricingPromotion.availability}</strong>
       </div>
 
-      <div className="pricing-tabs" role="tablist" aria-label="Project category">
+      <div
+        className="pricing-tabs"
+        role="tablist"
+        aria-label="Project category"
+      >
         {pricingCategories.map((item, index) => {
           const selected = index === categoryIndex;
           return (
@@ -146,8 +157,8 @@ export function PricingCalculator() {
             >
               {item.label}
             </button>
-            );
-          })}
+          );
+        })}
       </div>
 
       <div
@@ -181,44 +192,52 @@ export function PricingCalculator() {
             const quote = level.quotes[card.id];
             return (
               <article
-              className={
-                "pricing-card" + (card.featured ? " pricing-card-featured" : "")
-              }
-              key={card.id}
-            >
-              {card.badge ? (
-                <span className="pricing-card-badge"><img src="/assets/pricing/Lightning.svg" alt="" aria-hidden="true" /><span>{card.badge}</span></span>
-              ) : null}
-              <div className="live-priceTop pricing-card-top">
-                <div className="pricing-card-heading">
-                  <span className="pricing-card-icon">
-                    <CardIcon icon={card.icon} />
+                className={
+                  "pricing-card" +
+                  (card.featured ? " pricing-card-featured" : "")
+                }
+                key={card.id}
+              >
+                {card.badge ? (
+                  <span className="pricing-card-badge">
+                    <img
+                      src="/assets/pricing/Lightning.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <span>{card.badge}</span>
                   </span>
-                  <h3>{card.label}</h3>
+                ) : null}
+                <div className="live-priceTop pricing-card-top">
+                  <div className="pricing-card-heading">
+                    <span className="pricing-card-icon">
+                      <CardIcon icon={card.icon} />
+                    </span>
+                    <h3>{card.label}</h3>
+                  </div>
+                  <strong>{currencyFormatter.format(quote.price)}</strong>
+                  <div className="pricing-regular">
+                    <span>
+                      Regular {currencyFormatter.format(quote.regularPrice)}
+                    </span>
+                    <b>{quote.discount}% OFF</b>
+                  </div>
+                  <LiveButton
+                    href={card.ctaHref}
+                    className="pricing-book-call-button"
+                  >
+                    {card.ctaLabel}
+                  </LiveButton>
                 </div>
-                <strong>{currencyFormatter.format(quote.price)}</strong>
-                <div className="pricing-regular">
-                  <span>
-                    Regular {currencyFormatter.format(quote.regularPrice)}
-                  </span>
-                  <b>{quote.discount}% OFF</b>
-                </div>
-                <LiveButton
-                  href={card.ctaHref}
-                  className="pricing-book-call-button"
-                >
-                  {card.ctaLabel}
-                </LiveButton>
-              </div>
-              <ul>
-                {level.features[card.id].map((feature) => (
-                  <li key={feature}>
-                    <b aria-hidden="true">✓</b>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+                <ul>
+                  {level.features[card.id].map((feature) => (
+                    <li key={feature}>
+                      <b aria-hidden="true">✓</b>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
             );
           })}
         </div>
@@ -237,4 +256,3 @@ export function PricingCalculator() {
     </div>
   );
 }
-

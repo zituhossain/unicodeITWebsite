@@ -15,7 +15,6 @@ import { LiveFeaturedWorks } from "./LiveFeaturedWorks";
 import { LiveAllWorks } from "./LiveAllWorks";
 import { AboutMotion } from "./AboutMotion";
 
-
 export function WorksPageLive() {
   const workCards = [
     {
@@ -524,8 +523,8 @@ export function ContactPageLive() {
     [
       "Email Us",
       "Reach out anytime and we’ll respond within one business day",
-      "hello@aexo.studio",
-      "mailto:hello@aexo.studio",
+      "contact@unicodeit.com",
+      "mailto:contact@unicodeit.com",
     ],
     [
       "Call Us",
@@ -563,9 +562,7 @@ export function ContactPageLive() {
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </div>
-              <ContactCardAction href={href}>
-                {label}
-              </ContactCardAction>
+              <ContactCardAction href={href}>{label}</ContactCardAction>
             </article>
           ))}
         </div>

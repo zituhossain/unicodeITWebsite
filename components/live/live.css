@@ -2374,7 +2374,7 @@
     height: 51px;
     margin: 20px 0 40px;
     color: rgba(255, 255, 255, 0.7);
-    font: 500 17px/25.5px var(--sans);
+    font: 400 17px/25.5px var(--sans);
     letter-spacing: -0.17px;
     text-align: center;
   }
@@ -5258,9 +5258,21 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
   }
   .live-footerExact {
     background:
-      radial-gradient(ellipse at 0% 70%, var(--brand-alpha-08) 0, transparent 42%),
-      radial-gradient(ellipse at 100% 70%, var(--brand-alpha-08) 0, transparent 42%),
-      radial-gradient(ellipse at 50% 28%, rgb(255 255 255 / 0.035) 0, transparent 46%),
+      radial-gradient(
+        ellipse at 0% 70%,
+        var(--brand-alpha-08) 0,
+        transparent 42%
+      ),
+      radial-gradient(
+        ellipse at 100% 70%,
+        var(--brand-alpha-08) 0,
+        transparent 42%
+      ),
+      radial-gradient(
+        ellipse at 50% 28%,
+        rgb(255 255 255 / 0.035) 0,
+        transparent 46%
+      ),
       var(--ink);
   }
   .live-footerBrand > a:first-child img:first-child {

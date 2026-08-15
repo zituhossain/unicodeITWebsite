@@ -11,5 +11,25 @@ services:
       NEXT_TELEMETRY_DISABLED: "1"
       HOSTNAME: 0.0.0.0
       PORT: "3000"
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.unicodeit.rule=Host(`unicodeit.com`) || Host(`www.unicodeit.com`)
+      - traefik.http.routers.unicodeit.entrypoints=web
+      - traefik.http.routers.unicodeit-https.rule=Host(`unicodeit.com`) || Host(`www.unicodeit.com`)
+      - traefik.http.routers.unicodeit-https.entrypoints=websecure
+      - traefik.http.routers.unicodeit-https.tls=true
+      - traefik.http.routers.unicodeit-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.unicodeit-https.service=unicodeit-svc
+      - traefik.http.services.unicodeit-svc.loadbalancer.server.port=3000
+      - traefik.http.routers.unicodeit.middlewares=unicodeit-redirect
+      - traefik.http.middlewares.unicodeit-redirect.redirectscheme.scheme=https
+
+networks:
+  traefik:
+    external: true
+    name: traefik

@@ -163,7 +163,7 @@ function PartnersIntro() {
           <span className="fix-partnerCopy">
             Trusted by 100+ businesses worldwide
           </span>
-          <i
+          {/* <i
             className={`fix-partnerArt fix-partnerArtLeft`}
             data-partner-art
             aria-hidden="true"
@@ -172,7 +172,7 @@ function PartnersIntro() {
             className={`fix-partnerArt fix-partnerArtRight`}
             data-partner-art
             aria-hidden="true"
-          />
+          /> */}
         </div>
         <div className="fix-partnerGrid">
           <div className="fix-partnerGridTop">{cells(firstRow)}</div>

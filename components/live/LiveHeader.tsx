@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { liveNavigation } from "@/lib/live-data";
+import { CALENDLY_URL } from "@/lib/calendly";
+import { CalendlyLink } from "./CalendlyLink";
 
 export function LiveLogo() {
   return <Link href="/" className="live-logo" aria-label="Aexo home"><img className="live-logoImage" src="/assets/logo/logo_white.png" alt="Aexo" /></Link>;
@@ -31,26 +33,12 @@ export function RollingPrimaryLink({
   target?: "_blank";
   rel?: string;
 }) {
+  const isCalendly = href === CALENDLY_URL || href.includes("calendly.com");
   const arrow = tone === "red"
     ? "/assets/live/brand-cyan/BQFGBP7rOiJsOjI0KKyLLQcyBLk.png"
     : "/assets/live/kM9jSUZLyWdbxIqG89MSUiTPTg.png";
-  return <Link
-    href={href}
-    target={target}
-    rel={rel}
-    className={`rolling-primary ${variant === "compact" ? "rolling-compact" : variant === "small" ? "rolling-small" : "rolling-wide"} ${tone === "red" ? "rolling-red" : ""} ${centered ? "rolling-centered" : ""} ${className}`}
-    data-rolling-button="primary"
-    data-rolling-kind={tone === "red" ? "red" : "white"}
-    data-rolling-variant={
-      tone === "red"
-        ? centered
-          ? "2"
-          : "1"
-        : centered || variant === "wide"
-          ? "2"
-          : "1"
-    }
-  >
+  const classNames = `rolling-primary ${variant === "compact" ? "rolling-compact" : variant === "small" ? "rolling-small" : "rolling-wide"} ${tone === "red" ? "rolling-red" : ""} ${centered ? "rolling-centered" : ""} ${className}`;
+  const content = <>
     <span className="rolling-well" aria-hidden="true">
       <span className="rolling-fill">
         <span className="rolling-arrow-rail">
@@ -60,6 +48,36 @@ export function RollingPrimaryLink({
       </span>
     </span>
     <span className="rolling-label rolling-label-outgoing">{children}</span>
+  </>;
+  const rollingProps = {
+    className: classNames,
+    "data-rolling-button": "primary",
+    "data-rolling-kind": tone === "red" ? "red" : "white",
+    "data-rolling-variant":
+      tone === "red"
+        ? centered
+          ? "2"
+          : "1"
+        : centered || variant === "wide"
+          ? "2"
+          : "1",
+  } as const;
+
+  if (isCalendly) {
+    return (
+      <CalendlyLink href={href} target={target} rel={rel} {...rollingProps}>
+        {content}
+      </CalendlyLink>
+    );
+  }
+
+  return <Link
+    href={href}
+    target={target}
+    rel={rel}
+    {...rollingProps}
+  >
+    {content}
   </Link>;
 }
 

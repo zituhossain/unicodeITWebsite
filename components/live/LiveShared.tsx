@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { calLink, liveFaqs, liveTestimonials } from "@/lib/live-data";
+import { CALENDLY_URL } from "@/lib/calendly";
+import { CalendlyLink } from "./CalendlyLink";
 import { RollingPrimaryLink } from "./LiveHeader";
 import { LiveFaq } from "./LiveInteractive";
 
@@ -18,6 +20,7 @@ export function LiveButton({
   className?: string;
 }) {
   const external = href.startsWith("http");
+  const isCalendly = href === CALENDLY_URL || href.includes("calendly.com");
   const normalizedLabel =
     typeof children === "string" ? children.trim().toLowerCase() : "";
   const isBookCta =
@@ -37,8 +40,9 @@ export function LiveButton({
         {children}
       </RollingPrimaryLink>
     );
+  const SecondaryLink = isCalendly ? CalendlyLink : Link;
   return (
-    <Link
+    <SecondaryLink
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
@@ -46,7 +50,7 @@ export function LiveButton({
       data-rolling-button="secondary"
     >
       {children}
-    </Link>
+    </SecondaryLink>
   );
 }
 
@@ -260,7 +264,7 @@ export function ScaleCTA() {
         <br />
         Scale Now
       </h2>
-      <Link
+      <CalendlyLink
         className="live-scaleCtaButton shared-button"
         href={calLink}
         target={external ? "_blank" : undefined}
@@ -297,7 +301,7 @@ export function ScaleCTA() {
           <span className="live-scaleCtaButtonFill shared-button-fill" />
         </div>
         <span className="shared-button-text">Book A Call</span>
-      </Link>
+      </CalendlyLink>
     </section>
   );
 }
