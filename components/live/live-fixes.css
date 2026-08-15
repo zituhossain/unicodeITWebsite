@@ -1354,7 +1354,7 @@ span.fix-partnerCopy {
   display: flex;
   width: max-content;
   height: 90px;
-  animation-play-state: paused !important;
+  animation-play-state: paused;
   will-change: transform;
 }
 .fix-partnerRail .fix-partnerLogoCell {
