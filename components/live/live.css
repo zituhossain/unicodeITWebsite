@@ -1217,8 +1217,8 @@
   padding: 18px 2px;
 }
 .live-allWorksGrid h2 {
-  font: 400 42px var(--display);
-  text-transform: uppercase;
+  font: 600 42px var(--display);
+  text-transform: none;
   margin: 0;
 }
 .live-allWorksGrid span,
@@ -7579,6 +7579,9 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
 @media (max-width: 809.98px) {
   .live-hero {
     height: 616.5px;
+  }
+  .live-allWorksGrid h2 {
+    font: 500 20px/27px var(--sans);
   }
 }
 

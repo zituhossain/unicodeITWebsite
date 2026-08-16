@@ -1926,6 +1926,25 @@ button[data-form-state] > i {
   text-transform: none !important;
 }
 
+@media (max-width: 767.98px) {
+  .live-allWorks {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .live-allWorks > .live-allWorksGrid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 22px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .live-allWorks > .live-allWorksGrid > a {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .live-allWorksGrid > a {
     cursor: none;
