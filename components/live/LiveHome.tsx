@@ -18,6 +18,21 @@ import { PricingCalculator } from "./PricingCalculator";
 import { TechnologyStack } from "./TechnologyStack";
 import { ContactHeroSection } from "./LiveContactHero";
 
+const PARTNER_LOGOS = [
+  { name: "Dropcall", src: "/assets/brand/dropcall-logo.png" },
+  { name: "FormGent", src: "/assets/brand/FormGent-logo.png" },
+  { name: "HelpGent", src: "/assets/brand/helpgent-logo.png" },
+  { name: "LeadFex", src: "/assets/brand/LeadFex_Logo.png" },
+  { name: "Offcoustic", src: "/assets/brand/offcoustic-logo.png" },
+  { name: "Pentillo", src: "/assets/brand/pentillo-logo.png" },
+  { name: "Riptide", src: "/assets/brand/riptide-logo.png" },
+  { name: "Storyteq", src: "/assets/brand/Storyteq_Logo.png" },
+  { name: "Synthesia", src: "/assets/brand/synthesia-logo.png" },
+  { name: "Waymark", src: "/assets/brand/Waymark-logo.png" },
+] as const;
+
+type PartnerLogo = (typeof PARTNER_LOGOS)[number];
+
 function Hero() {
   return (
     <section className={`live-hero fix-hero`} data-section="hero">
@@ -127,28 +142,16 @@ function Hero() {
 }
 
 function PartnersIntro() {
-  const firstRow = [
-    ["Brandly", "awYGr9hKmGORNITxrdFwP2P4tN4.png"],
-    ["Framex", "SwxVnCDnWY5CqqJzzml0eW8EoGQ.png"],
-    ["Nexora", "0LMg4hj6OEknvI9sYQ0FzlzvyE.png"],
-    ["Typely", "2aODmHv0zXAaBrr5MGpuKx4.png"],
-    ["Webora", "gGeRS06WZLqWd2v2lztoyTOsrU.png"],
-  ] as const;
-  const secondRow = [
-    ["Brandly", "awYGr9hKmGORNITxrdFwP2P4tN4.png"],
-    ["Framex", "SwxVnCDnWY5CqqJzzml0eW8EoGQ.png"],
-    ["Nexora", "0LMg4hj6OEknvI9sYQ0FzlzvyE.png"],
-    ["Typely", "2aODmHv0zXAaBrr5MGpuKx4.png"],
-    ["Webora", "gGeRS06WZLqWd2v2lztoyTOsrU.png"],
-  ] as const;
-  const cells = (items: typeof firstRow | typeof secondRow, copy = false) =>
-    items.map(([name, logo]) => (
+  const firstRow = PARTNER_LOGOS.slice(0, 5);
+  const secondRow = PARTNER_LOGOS.slice(5);
+  const cells = (items: readonly PartnerLogo[], copy = false) =>
+    items.map(({ name, src }) => (
       <div
         className="fix-partnerLogoCell"
         aria-hidden={copy || undefined}
         key={`${name}-${copy ? "copy" : "original"}`}
       >
-        <img src={`/assets/live/${logo}`} alt={copy ? "" : `${name} logo`} />
+        <img src={src} alt={copy ? "" : `${name} logo`} />
       </div>
     ));
 
