@@ -441,7 +441,10 @@ function Services() {
                   <h3>{card.title}</h3>
                   <p>{card.copy}</p>
                 </div>
-                <ContactCardAction className="live-serviceCardAction">
+                <ContactCardAction
+                  href="/contact"
+                  className="live-serviceCardAction"
+                >
                   {card.cta}
                 </ContactCardAction>
               </div>

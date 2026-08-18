@@ -76,7 +76,7 @@ function CustomScopeSection() {
         </div>
         <div className="pricing-custom-scope-actions">
           <LiveButton
-            href="https://calendly.com/contact-unicodeit/30min"
+            href="/contact"
             className="pricing-book-call-button"
           >
             Book A Call
