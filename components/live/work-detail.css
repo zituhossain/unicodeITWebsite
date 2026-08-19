@@ -10,8 +10,12 @@
   width: min(100%, 1040px);
   margin-inline: auto;
 }
-.live-workDetailHeader { padding: 46px 0 72px; }
-.live-workDetailHeader .live-caseBackLink { margin-bottom: 54px; }
+.live-workDetailHeader {
+  padding: 46px 0 72px;
+}
+.live-workDetailHeader .live-caseBackLink {
+  margin-bottom: 54px;
+}
 .live-workDetailHeader h1 {
   margin: 0 0 42px;
   color: #fff;
@@ -24,26 +28,31 @@
 }
 .live-workDetailInfo {
   display: grid;
-  grid-template-columns: 1fr 1.08fr 1.28fr 1.1fr 0.95fr;
+  grid-template-columns: 1fr 1.08fr 1.28fr 1.1fr;
   gap: 28px;
   margin: 0;
   padding: 26px 0 30px;
   border-block: 1px solid rgba(255, 255, 255, 0.15);
 }
-.live-workDetailInfoItem { min-width: 0; }
+.live-workDetailInfoItem {
+  min-width: 0;
+}
 .live-workDetailInfoItem dt {
   margin-bottom: 12px;
   color: #888;
-  font: 500 13px/18px var(--mono);
+  font: 300 13px/18px var(--mono);
   letter-spacing: 0.45px;
   text-transform: uppercase;
 }
 .live-workDetailInfoItem dd {
   margin: 0;
   color: #d1d1d1;
-  font: 400 14px/21px var(--sans);
+  font: 300 14px/21px var(--sans);
 }
-.live-workDetailInfoItem dd > span { display: block; }
+.live-workDetailInfoItem dd > span {
+  display: block;
+  margin-bottom: 8px;
+}
 .live-workDetailInfoItem a {
   display: inline-flex;
   align-items: center;
@@ -55,7 +64,9 @@
   transition: color 0.25s ease;
 }
 .live-workDetailInfoItem a:hover,
-.live-workDetailInfoItem a:focus-visible { color: var(--brand); }
+.live-workDetailInfoItem a:focus-visible {
+  color: var(--brand);
+}
 .live-workDetailInfoItem a svg {
   width: 16px;
   height: 16px;
@@ -69,17 +80,21 @@
   max-width: 1000px;
   margin: 34px 0 0;
   color: #999;
-  font: 400 17px/25.5px var(--sans);
+  font: 300 17px/25.5px var(--sans);
   letter-spacing: -0.17px;
 }
-.live-workDetailBody { padding-bottom: 120px; }
+.live-workDetailBody {
+  padding-bottom: 120px;
+}
 .live-workDetailHeroMedia,
 .live-workDetailImages {
   margin: 0;
   overflow: hidden;
   border-radius: 10px;
 }
-.live-workDetailHeroMedia { aspect-ratio: 16 / 9; }
+.live-workDetailHeroMedia {
+  aspect-ratio: 16 / 9;
+}
 .live-workDetailHeroMedia img,
 .live-workDetailImages img {
   display: block;
@@ -100,7 +115,10 @@
 .live-workDetailShowcaseCopy h2 {
   margin: 0 0 18px;
   color: #fff;
-  font: 600 40px/48px "Inter Display", Inter, sans-serif;
+  font:
+    600 40px/48px "Inter Display",
+    Inter,
+    sans-serif;
   letter-spacing: -1.4px;
 }
 .live-workDetailNarrative p,
@@ -109,13 +127,24 @@
   max-width: 820px;
   margin: 0;
   color: #999;
-  font: 400 16px/24px var(--sans);
+  font: 300 16px/24px var(--sans);
   letter-spacing: -0.1px;
 }
-.live-workDetailNarrative ul { padding-left: 23px; }
-.live-workDetailNarrative li::marker { color: #aaa; }
-.live-workDetailShowcase + .live-workDetailShowcase { margin-top: 72px; }
-.live-workDetailShowcaseCopy { padding: 0 32px 30px; }
+.live-workDetailNarrative ul {
+  padding-left: 23px;
+}
+.live-workDetailNarrative li {
+  font-weight: 300;
+}
+.live-workDetailNarrative li::marker {
+  color: #aaa;
+}
+.live-workDetailShowcase + .live-workDetailShowcase {
+  margin-top: 72px;
+}
+.live-workDetailShowcaseCopy {
+  padding: 0 32px 30px;
+}
 .live-workDetailImages--grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -128,14 +157,20 @@
   object-fit: cover;
 }
 @media (max-width: 900px) {
-  .live-workDetail { width: calc(100% - 32px); }
+  .live-workDetail {
+    width: calc(100% - 32px);
+  }
   .live-workDetailHeader,
-  .live-workDetailBody { width: calc(100% - 48px); }
+  .live-workDetailBody {
+    width: calc(100% - 48px);
+  }
   .live-workDetailInfo {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 32px;
   }
-  .live-workDetailInfoItem:last-child { grid-column: 1 / -1; }
+  .live-workDetailInfoItem:last-child {
+    grid-column: 1 / -1;
+  }
 }
 @media (max-width: 600px) {
   .live-workDetail {
@@ -143,9 +178,15 @@
     padding-top: 72px;
   }
   .live-workDetailHeader,
-  .live-workDetailBody { width: calc(100% - 28px); }
-  .live-workDetailHeader { padding: 34px 0 48px; }
-  .live-workDetailHeader .live-caseBackLink { margin-bottom: 38px; }
+  .live-workDetailBody {
+    width: calc(100% - 28px);
+  }
+  .live-workDetailHeader {
+    padding: 34px 0 48px;
+  }
+  .live-workDetailHeader .live-caseBackLink {
+    margin-bottom: 38px;
+  }
   .live-workDetailHeader h1 {
     margin-bottom: 30px;
     font-size: clamp(44px, 15vw, 64px);
@@ -157,15 +198,21 @@
     gap: 26px;
     padding-block: 24px;
   }
-  .live-workDetailInfoItem:last-child { grid-column: auto; }
+  .live-workDetailInfoItem:last-child {
+    grid-column: auto;
+  }
   .live-workDetailSummary {
     margin-top: 28px;
     font-size: 15px;
     line-height: 23px;
   }
-  .live-workDetailBody { padding-bottom: 80px; }
+  .live-workDetailBody {
+    padding-bottom: 80px;
+  }
   .live-workDetailHeroMedia,
-  .live-workDetailImages { border-radius: 7px; }
+  .live-workDetailImages {
+    border-radius: 7px;
+  }
   .live-workDetailNarrative {
     gap: 46px;
     padding: 52px 6px 58px;
@@ -183,7 +230,304 @@
     font-size: 15px;
     line-height: 23px;
   }
-  .live-workDetailShowcase + .live-workDetailShowcase { margin-top: 52px; }
-  .live-workDetailShowcaseCopy { padding: 0 6px 24px; }
-  .live-workDetailImages--grid { grid-template-columns: 1fr; }
+  .live-workDetailShowcase + .live-workDetailShowcase {
+    margin-top: 52px;
+  }
+  .live-workDetailShowcaseCopy {
+    padding: 0 6px 24px;
+  }
+  .live-workDetailImages--grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* EmLock long-form case study, matched to Figma node 7675:909. */
+.live-workDetail[data-detail-layout="figma-longform"] {
+  width: min(946px, calc(100% - 48px));
+  padding-top: 81px;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailHeader,
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailBody {
+  /* width: min(973px, calc(100vw - 48px)); */
+  margin-right: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailHeader {
+  padding: 0 0 75px;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-caseBackLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 80px;
+  margin: 0 0 54px;
+  padding-left: 27px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-caseBackLink > i {
+  width: 16px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-caseBackLink
+  > i
+  span {
+  width: 16px;
+  flex-basis: 16px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-caseBackLink:hover
+  > i
+  span {
+  transform: translateX(-18px);
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailIntro {
+  padding-inline: 80px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailHeader
+  h1 {
+  margin: 0 0 40px;
+  font-family: "Inter Display", Inter, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: -2.24px;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailInfo {
+  display: grid;
+  /* grid-template-columns: 89px 100px 135px minmax(0, 1fr); */
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailInfoItem
+  dt {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.26px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailInfoItem
+  dd {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Inter Display", Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailSummary {
+  max-width: none;
+  margin: 40px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Inter Display", Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: -0.18px;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailBody {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  padding-bottom: 120px;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailHeroMedia,
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailBodyMedia {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailHeroMedia {
+  aspect-ratio: 2000 / 1393;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailHeroMedia
+  img,
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailBodyMedia
+  img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.live-workDetail[data-detail-layout="figma-longform"] .live-workDetailLongform {
+  padding: 0 200px 0 90px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongform
+  h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: "Inter Display", Inter, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: -0.48px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Inter Display", Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: -0.18px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent
+  p,
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent
+  ul {
+  margin: 0;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent
+  ul {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 27px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent
+  li {
+  font-weight: 300;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent
+  li::marker {
+  color: rgba(255, 255, 255, 0.6);
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformContent
+  strong {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.live-workDetail[data-detail-layout="figma-longform"]
+  .live-workDetailLongformGroup
+  h3 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Inter Display", Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.24px;
+}
+
+@media (max-width: 900px) {
+  .live-workDetail[data-detail-layout="figma-longform"] {
+    width: calc(100% - 32px);
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailHeader,
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailBody {
+    width: calc(100vw - 64px);
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailIntro {
+    padding-inline: 40px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailInfo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailLongform {
+    padding-inline: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .live-workDetail[data-detail-layout="figma-longform"] {
+    width: calc(100% - 20px);
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailHeader,
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailBody {
+    width: calc(100vw - 48px);
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailHeader {
+    padding-bottom: 52px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-caseBackLink {
+    min-height: 80px;
+    margin-bottom: 40px;
+    padding-left: 27px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailIntro,
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailLongform {
+    padding-inline: 0;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailHeader
+    h1 {
+    margin-bottom: 32px;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -1.44px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailInfo {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailSummary {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"] .live-workDetailBody {
+    gap: 52px;
+    padding-bottom: 80px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailHeroMedia,
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailBodyMedia {
+    border-radius: 12px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailLongform
+    h2 {
+    margin-bottom: 10px;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: -0.34px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailLongformContent {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+  }
+  .live-workDetail[data-detail-layout="figma-longform"]
+    .live-workDetailLongformGroup
+    h3 {
+    font-size: 21px;
+    line-height: 31.5px;
+    letter-spacing: -0.21px;
+  }
 }
