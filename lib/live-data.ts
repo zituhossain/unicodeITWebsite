@@ -183,32 +183,36 @@ export const contactSocialProofCard = {
 
 export const liveFaqs = [
   [
-    "Who is this agency best suited for?",
-    "We work best with ambitious startups, technology companies, and growing brands that value thoughtful design, clear strategy, and fast execution.",
+    "What software development services does Unicode IT provide?",
+    "Unicode IT provides end-to-end digital product development services, including custom software development, SaaS development, web development, mobile app development, AI integration and automation, UI/UX design, and Framer & Webflow development. We work with businesses and startups to design, build, launch, and improve scalable digital products.",
   ],
   [
-    "What tools and technologies do you use?",
-    "Our core toolkit includes Figma, Framer, Webflow, modern frontend technologies, and collaborative tools selected around each project.",
+    "How much does custom software development cost?",
+    "Custom software development costs vary based on the product scope, number of features, UI/UX requirements, integrations, technology stack, and project complexity. A focused MVP usually requires a smaller investment than a complex SaaS or enterprise platform. Unicode IT reviews your requirements first and provides a project-specific estimate rather than using a one-size-fits-all price.",
   ],
   [
-    "What services do you offer exactly?",
-    "We provide product design, web development, branding, landing pages, UI/UX design, motion design, and Framer development.",
+    "How long does it take to build a website, mobile app, or custom software product?",
+    "The development timeline depends on the project's complexity and scope. A focused website or MVP can often be completed faster than a large SaaS platform or custom business system. Our process typically covers discovery, UI/UX design, development, testing, deployment, and post-launch improvements, with the timeline defined after reviewing the requirements.",
   ],
   [
-    "Can I request revisions during the project?",
-    "Yes. Every engagement includes structured feedback and revision rounds so the final result is aligned and production ready.",
+    "Does Unicode IT develop mobile apps for both Android and iOS?",
+    "Yes. Unicode IT provides Android and iOS mobile app development, including cross-platform applications. We can handle UI/UX design, frontend development, backend APIs, authentication, database integration, third-party services, testing, and deployment as part of the mobile app development process.",
   ],
   [
-    "Do you offer ongoing design support plans?",
-    "Yes. Our Growth Retainer provides continuous design and development support, priority turnaround, and regular strategy sessions.",
+    "Can Unicode IT integrate AI and automation into my existing business or software?",
+    "Yes. We provide AI integration and automation services for both existing systems and new products. Solutions can include AI chatbots, OpenAI or Claude integrations, AI agents, workflow automation, CRM and email automation, intelligent data processing, and custom API-based AI features.",
   ],
   [
-    "Do you help with strategy and planning?",
-    "Yes. Discovery, research, positioning, user flows, scope, and launch planning are built into our process.",
+    "Does Unicode IT build SaaS platforms and MVPs for startups?",
+    "Yes. Unicode IT helps startups and businesses develop SaaS platforms, MVPs, and custom web applications from initial product planning through launch. Depending on the project, this can include product discovery, UI/UX design, frontend and backend development, APIs, databases, integrations, testing, and deployment.",
   ],
   [
-    "How do we get started with you?",
-    "Book an introductory call or send the project details through our contact form. We will respond with the next steps within one business day.",
+    "What technologies does Unicode IT use?",
+    "We select technologies based on each project's performance, scalability, maintainability, and business requirements. Our technology stack can include Next.js, React, Node.js, Laravel, Flutter, React Native, PostgreSQL, MySQL, MongoDB, WordPress, Framer, Webflow, and AI APIs such as OpenAI and Claude.",
+  ],
+  [
+    "Does Unicode IT provide support after a project is launched?",
+    "es. We can provide post-launch software maintenance and support for websites, SaaS products, mobile apps, and custom software. Depending on the engagement, this may include bug fixes, performance improvements, security updates, new features, integrations, infrastructure improvements, and ongoing product development.",
   ],
 ] as const;
 

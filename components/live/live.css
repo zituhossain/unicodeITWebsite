@@ -4670,7 +4670,7 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     display: none;
   }
   .live-faqGridExact .live-faqCard button span {
-    font: 500 18px/21.6px var(--sans);
+    font: 500 18px/27px var(--sans);
     letter-spacing: -0.36px;
   }
   .live-faqGridExact .live-faqCard button i {
