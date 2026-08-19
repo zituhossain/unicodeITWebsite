@@ -743,25 +743,7 @@
 .fix-browserFrame {
   position: relative;
   z-index: 2;
-  width: min(1000px, calc(100vw - 80px));
-  height: 704px;
   margin: auto;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  overflow: hidden;
-}
-.fix-browserFrame > .fix-browserShell {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  border-radius: 0;
-  pointer-events: none;
 }
 .fix-projectImages {
   position: absolute;
@@ -771,14 +753,8 @@
 }
 .fix-projectImages > img {
   position: absolute;
-  left: 1.44855%;
-  top: 8.46875%;
   display: block;
-  width: 97.1029%;
-  height: 89.9119%;
   max-width: none;
-  object-fit: contain;
-  object-position: center;
   opacity: 0;
   transition: opacity 0.45s cubic-bezier(0.44, 0, 0.56, 1);
 }
@@ -787,9 +763,6 @@
 }
 img[data-project-media] {
   background: #07110f;
-}
-img[data-project-media][data-project-slug="tempo"] {
-  background: #050b20;
 }
 img[data-project-media][data-project-slug="unigram"] {
   background: #eaf5f7;
@@ -882,12 +855,7 @@ img[data-project-media][data-project-slug="cognefy"] {
 .fix-projectInteraction {
   position: absolute;
   z-index: 4;
-  left: 1.44855%;
-  right: 1.44855%;
-  top: 8.46875%;
-  bottom: 1.61935%;
   display: block;
-  border-radius: 0 0 13px 13px;
   cursor: none;
 }
 .fix-projectImages {
@@ -2021,14 +1989,8 @@ span.fix-partnerCopy {
   .fix-mobileProjectImage {
     position: absolute;
     z-index: 2;
-    left: 4px;
     display: block;
-    width: 328px;
-    height: 213.59px;
     max-width: none;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 0;
   }
   .fix-partners {
     padding: 60px 0 50px !important;

@@ -14,7 +14,7 @@ import { LiveButton } from "./LiveShared";
 const selectedWorks = [
   {
     ...liveWorks[0],
-    image: "/assets/projects/tempo-home.png",
+    image: liveWorks[0].listing,
   },
   {
     ...liveWorks[1],

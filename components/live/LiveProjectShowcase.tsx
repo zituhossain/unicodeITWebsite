@@ -7,11 +7,13 @@ import { useRouter } from "next/navigation";
 import { useCallback, useLayoutEffect, useRef, type MouseEvent, type PointerEvent as ReactPointerEvent } from "react";
 import gsap from "gsap";
 import { motionIsDeterministic, useMotionCarousel } from "@/components/motion/control";
+import { liveWorks } from "@/lib/live-data";
+import { FeaturedProjectFrame } from "./FeaturedProjectFrame";
 
 const projects = [
-  { slug: "tempo", name: "Tempo", image: "/assets/projects/tempo-home.png", icon: "/assets/projects/tempo-icon.ico", inset: 19 },
-  { slug: "unigram", name: "Unigram", image: "/assets/projects/unigram-home.png", icon: "/assets/projects/unigram-icon.png", inset: 18 },
-  { slug: "teamlink", name: "Teamlink", image: "/assets/live/30Nd65liCOODrWIKwQTTFtIWag.png", icon: "/assets/live/uvYFA3tUk0recctfNBRH2PNmk.png", inset: 16 },
+  { slug: liveWorks[0].slug, name: liveWorks[0].title, image: liveWorks[0].listing, icon: liveWorks[0].listing },
+  { slug: "unigram", name: "Unigram", image: "/assets/projects/unigram-home.png", icon: "/assets/projects/unigram-icon.png" },
+  { slug: "teamlink", name: "Teamlink", image: "/assets/live/30Nd65liCOODrWIKwQTTFtIWag.png", icon: "/assets/live/uvYFA3tUk0recctfNBRH2PNmk.png" },
 ] as const;
 
 const cycleDuration = 5_000;
@@ -331,46 +333,48 @@ export function LiveProjectShowcase() {
     aria-label="Selected project preview"
   >
     <img className="fix-projectGlow" src="/assets/live/project-partners-glow-cyan.png" alt="" />
-    <div className={`live-browserFrame fix-browserFrame`}>
-      <img className="fix-browserShell" src="/assets/live/269s6g8NfMPp0Qq9CNdgoaPUM.png" alt="" />
+    <FeaturedProjectFrame
+      variant="browser"
+      className="live-browserFrame fix-browserFrame"
+      toolbar={<div className="live-browserTop fix-browserTop" role="tablist" aria-label="Project previews">{projects.map((project, index) => <button
+          className={index === 0 ? "fix-projectTabActive" : ""}
+          data-showcase-tab
+          data-showcase-index={index}
+          type="button"
+          role="tab"
+          aria-selected={index === 0}
+          tabIndex={index === 0 ? 0 : -1}
+          onClick={() => selectManualProject(index)}
+          key={project.name}
+        ><img src={project.icon} alt="" /><span>{project.name}</span></button>)}</div>}
+      progress={<span className="fix-projectProgress" data-motion-loop="project-progress" aria-hidden="true"><i ref={progressRef} /></span>}
+    >
       <div className="fix-projectImages">{projects.map((project, index) => <img
-        className={index === 0 ? "fix-projectImageActive" : ""}
-        data-showcase-slide
-        data-showcase-index={index}
-        data-project-media
-        data-project-slug={project.slug}
-        src={project.image}
-        alt={`${project.name} project`}
-        key={project.name}
-      />)}</div>
-      <div className={`live-browserTop fix-browserTop`} role="tablist" aria-label="Project previews">{projects.map((project, index) => <button
-        className={index === 0 ? "fix-projectTabActive" : ""}
-        data-showcase-tab
-        data-showcase-index={index}
-        type="button"
-        role="tab"
-        aria-selected={index === 0}
-        tabIndex={index === 0 ? 0 : -1}
-        onClick={() => selectManualProject(index)}
-        key={project.name}
-      ><img src={project.icon} alt="" /><span>{project.name}</span></button>)}</div>
-      <span className="fix-projectProgress" data-motion-loop="project-progress" aria-hidden="true"><i ref={progressRef} /></span>
+          className={index === 0 ? "fix-projectImageActive" : ""}
+          data-showcase-slide
+          data-showcase-index={index}
+          data-project-media
+          data-project-slug={project.slug}
+          src={project.image}
+          alt={`${project.name} project`}
+          key={project.name}
+        />)}</div>
       <Link
         ref={projectLinkRef}
         className="fix-projectInteraction"
         href={`/works/${projects[0].slug}`}
-        aria-label="View Tempo project"
+        aria-label={`View ${projects[0].name} project`}
         onPointerEnter={showProjectCursor}
         onPointerMove={showProjectCursor}
         onPointerLeave={hideProjectCursor}
         onClick={openActiveProject}
       />
-    </div>
+    </FeaturedProjectFrame>
     <div ref={hoverCursorRef} className="fix-selectedCursor fix-projectHoverCursor" aria-hidden="true">
       <i><b /></i><span>View Project</span>
     </div>
     <div className="fix-mobileProjectViewport" aria-hidden="true">
-      <div className="fix-mobileProjectTrack">{[...projects, ...projects].map((project, index) => <div className="fix-mobileProjectCard" key={`${project.name}-${index}`}><img className="fix-mobileProjectShell" src="/assets/live/269s6g8NfMPp0Qq9CNdgoaPUM.png" alt="" /><img className="fix-mobileProjectImage" data-project-media data-project-slug={project.slug} style={{ top: project.inset }} src={project.image} alt="" /></div>)}</div>
+      <div className="fix-mobileProjectTrack">{[...projects, ...projects].map((project, index) => <div className="fix-mobileProjectCard" key={`${project.name}-${index}`}><img className="fix-mobileProjectShell" src="/assets/live/269s6g8NfMPp0Qq9CNdgoaPUM.png" alt="" /><img className="fix-mobileProjectImage" data-project-media data-project-slug={project.slug} src={project.image} alt="" /></div>)}</div>
     </div>
   </section>;
 }

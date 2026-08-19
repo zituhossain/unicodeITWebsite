@@ -19,9 +19,9 @@ export function WorksPageLive() {
   const workCards = [
     {
       ...liveWorks[0],
-      image: "/assets/projects/tempo-home.png",
-      category: "Saas",
-      region: "India",
+      image: liveWorks[0].listing,
+      category: liveWorks[0].category,
+      region: liveWorks[0].region,
     },
     {
       ...liveWorks[1],

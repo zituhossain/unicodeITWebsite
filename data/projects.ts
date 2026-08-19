@@ -28,6 +28,9 @@ export type Project = {
   gallery: readonly string[];
 };
 
+export const EMLOCK_PROJECT_IMAGE =
+  "/assets/projects/emlock/_mobileapp_project_main_img.png";
+
 export const projects = [
   {
     slug: "ametrix",
@@ -54,29 +57,31 @@ export const projects = [
     gallery: ["/assets/project-ametrix.png"],
   },
   {
-    slug: "tempo",
-    title: "Tempo",
-    industry: ["Productivity", "SaaS"],
-    serviceCategory: ["SaaS Development"],
-    servicesProvided: ["Product Discovery", "User Research", "UI UX Design", "Development"],
-    scopeOfWork: ["React Development", "Node.js Development", "Design System"],
-    liveUrl: "https://tempo.unicodeit.com/",
-    summary: "Tempo is a productivity-focused SaaS platform designed to simplify inbox management through AI-powered automation. We were tasked with shaping the product experience, refining the brand identity, and building a high-converting marketing website. Our approach focused on clarity, speed, and a modern visual system that reflects efficiency and intelligence.",
-    heroImage: "/assets/projects/tempo-home.png",
-    problems: "Tempo needed a seamless experience that balanced complex data with simplicity while keeping every workflow fast, coherent, and easy to understand.",
-    solutions: ["Created a flexible product design system", "Designed intuitive dashboards and structured layouts", "Simplified complex automation workflows", "Built responsive, reusable interface patterns", "Improved clarity across key user journeys"],
-    showcase: [
-      { title: "The final experience", body: "The final experience combines strong visuals with usability, helping users manage workflows effortlessly while reinforcing Tempo as a modern AI-first platform.", images: ["/assets/projects/tempo-dashboard.png"], layout: "full" },
-      { images: ["/assets/projects/tempo-overview.png", "/assets/projects/tempo-analytics.png", "/assets/projects/tempo-quick-actions.png"], layout: "grid" },
+    slug: "emlock",
+    title: "EmLock Mobile App Development",
+    industry: [],
+    serviceCategory: [],
+    servicesProvided: [],
+    scopeOfWork: [],
+    liveUrl: "",
+    summary: "",
+    heroImage: EMLOCK_PROJECT_IMAGE,
+    problems: "",
+    solutions: [],
+    showcase: [],
+    tags: [
+      "Mobile Application",
+      "App Development",
+      "SaaS Development",
+      "UI/UX Design",
     ],
-    tags: ["UI/UX Design", "SaaS Development", "AI Automation", "Platform: Web"],
-    category: "SaaS",
-    region: "India",
+    category: "Mobile Application",
+    region: "",
     year: "2026",
-    listing: "/assets/projects/tempo-home.png",
-    relatedImage: "/assets/projects/tempo-home.png",
-    cover: "/assets/projects/tempo-home.png",
-    gallery: ["/assets/projects/tempo-dashboard.png", "/assets/projects/tempo-overview.png", "/assets/projects/tempo-analytics.png", "/assets/projects/tempo-quick-actions.png"],
+    listing: EMLOCK_PROJECT_IMAGE,
+    relatedImage: EMLOCK_PROJECT_IMAGE,
+    cover: EMLOCK_PROJECT_IMAGE,
+    gallery: [],
   },
   {
     slug: "unigram",

@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useCallback, useLayoutEffect, useRef } from "react";
 import { motionIsDeterministic, useMotionCarousel } from "@/components/motion/control";
+import { liveWorks } from "@/lib/live-data";
+import { FeaturedProjectFrame } from "./FeaturedProjectFrame";
 import { ProjectHoverCursor, useProjectHoverCursor } from "./LiveSelectedWorks";
 
 type FeaturedWorkSlide = {
-  slug: "tempo" | "unigram" | "teamlink";
+  slug: string;
   title: string;
   image: string;
   thumbnail: string;
@@ -17,7 +19,7 @@ type FeaturedWorksRuntime = {
 };
 
 const slides: FeaturedWorkSlide[] = [
-  { slug: "tempo", title: "Tempo project", image: "/assets/projects/tempo-home.png", thumbnail: "/assets/projects/tempo-home.png" },
+  { slug: liveWorks[0].slug, title: `${liveWorks[0].title} project`, image: liveWorks[0].listing, thumbnail: liveWorks[0].listing },
   { slug: "unigram", title: "Unigram project", image: "/assets/projects/unigram-home.png", thumbnail: "/assets/projects/unigram-home.png" },
   { slug: "teamlink", title: "Teamlink project", image: "/assets/live/a0Wtj8qawEzvxhakjHMoT0DWcQ.png", thumbnail: "/assets/live/oMPehT5WogBPz0L0HAvBmbujI8.png" },
 ];
@@ -309,9 +311,11 @@ export function LiveFeaturedWorks() {
     data-featured-work-progress="0"
     data-featured-work-transition="1"
   >
-    <div className="live-featuredWork">
-      <img className="live-featuredWorkFrame" src="/assets/live/brand-cyan/Ea995q8deCj9b3t43hhutnE8.png" alt="" />
-      <div className="live-featuredWorkSlides">
+    <FeaturedProjectFrame
+      variant="works"
+      className="live-featuredWork"
+      viewportClassName="live-featuredWorkSlides"
+    >
         {slides.map((slide, index) => <Link
           className="live-featuredWorkSlide"
           data-featured-work-slide
@@ -323,8 +327,7 @@ export function LiveFeaturedWorks() {
         >
           <img data-project-media data-project-slug={slide.slug} src={slide.image} alt={slide.title} />
         </Link>)}
-      </div>
-    </div>
+    </FeaturedProjectFrame>
     <div className="live-worksThumbs" data-featured-work-thumbs aria-hidden="true">
       <div ref={trackRef} className="live-worksThumbTrack">
         {[...slides, ...slides, ...slides].map((slide, index) => <img

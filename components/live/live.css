@@ -6357,33 +6357,10 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     height: 796px;
   }
   .live-featuredWork {
-    position: relative;
-    width: 1000px;
-    height: 656.781px;
     margin: 0 auto;
-    border: 0;
-    border-radius: 20px 20px 30px 30px;
-    background: transparent;
-    box-shadow: none;
-    overflow: hidden;
-  }
-  .live-featuredWorkFrame {
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
   }
   .live-featuredWorkSlides {
-    position: absolute;
     z-index: 1;
-    left: 12px;
-    top: 12px;
-    width: 976px;
-    height: 632.781px;
-    border-radius: 15px;
-    overflow: hidden;
   }
   .live-featuredWorkSlide {
     position: absolute;
@@ -8082,14 +8059,6 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     height: 21px;
     font: 500 14px/21px var(--mono);
     letter-spacing: 0.42px;
-  }
-  .live-featuredWork > .live-featuredWorkSlides {
-    left: 12px;
-    right: auto;
-    top: 12px;
-    bottom: auto;
-    width: 976px;
-    height: 632.781px;
   }
   .live-allWorks {
     padding: 100px 40px;
