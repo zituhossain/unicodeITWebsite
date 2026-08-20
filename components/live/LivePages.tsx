@@ -105,10 +105,10 @@ export function AboutPageLive() {
   ];
 
   const thinkerCopy = [
-    "We don’t design for noise or vanity metrics. We design for clarity, impact, and experiences that people actually remember. Every project is built to feel intentional, not just visually appealing.",
-    "We believe great design should simplify, not complicate. It should guide users effortlessly, communicate clearly, and make every interaction feel natural and purposeful.",
-    "Too often, digital products are rushed, inconsistent, and disconnected. We’ve seen it firsthand endless revisions, unclear direction, and systems that don’t scale. That’s where we choose to work differently.",
-    "We focus on building systems, not just screens. Thoughtful design decisions, structured workflows, and scalable solutions that grow with your product over time.",
+    "At Unicode IT, we don’t build digital products just to look impressive. We focus on clarity, usability, performance, and measurable business value. Every software, web, mobile, and UI/UX project is designed with purpose, scalability, and the end user in mind.",
+    "We believe great digital experiences should simplify complex problems, not create new ones. From custom software development to mobile apps and AI-powered solutions, our goal is to make every interaction intuitive, efficient, and aligned with real business objectives.",
+    "Too many digital products suffer from rushed development, inconsistent design, technical limitations, and systems that fail to scale. We’ve seen how unclear planning and disconnected workflows lead to costly revisions. That’s why Unicode IT takes a more structured, strategic approach.",
+    "We build complete digital systems, not just individual screens or features. Through thoughtful UI/UX design, scalable development, reliable technology, and structured workflows, we create digital products that can evolve with your business and support long-term growth.",
   ];
 
   return (
