@@ -86,7 +86,7 @@ export function AboutMotion() {
     if (deterministic) {
       const applyState = (nextState: AboutState) => {
         const revealed = nextState !== "initial";
-        const cultureRevealed = nextState === "culture-revealed";
+        const cultureRevealed = nextState !== "initial";
         root.dataset.aboutState = nextState;
         root.dataset.aboutMotion = "deterministic";
         root.dataset.aboutHover = nextState === "hover" ? "0" : "none";
@@ -180,9 +180,9 @@ export function AboutMotion() {
         scrollTrigger: { trigger: "[data-section='team']", start: "top 56%", toggleActions: "play reverse play reverse" },
       });
 
-      if (cultureImages.length) gsap.fromTo(cultureImages, { opacity: 0, y: 18, scale: 1.025 }, {
-        opacity: 1, y: 0, scale: 1, duration: 1, stagger: .08, ease: sourceEase,
-        scrollTrigger: { trigger: "[data-about-culture]", start: "top 68%", toggleActions: "play reverse play reverse" },
+      if (cultureImages.length) gsap.fromTo(cultureImages, { y: 18, scale: 1.025 }, {
+        y: 0, scale: 1, duration: 1, stagger: .08, ease: sourceEase,
+        scrollTrigger: { trigger: "[data-about-culture]", start: "top 68%", toggleActions: "play none none reverse" },
       });
 
       gsap.fromTo(cultureGlow, { opacity: 0, y: 90, scale: 1.08 }, {

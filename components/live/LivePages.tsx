@@ -98,10 +98,10 @@ export function PricingPageLive() {
 
 export function AboutPageLive() {
   const story = [
-    "We started Aexo with a simple belief that great design can transform how brands connect, grow, and stand out in a crowded digital world.",
-    "Today, building digital products often involves fragmented workflows from design and development to collaboration and feedback—making the process slow, inconsistent, and difficult to scale.",
-    "Our team experienced these challenges firsthand while working across multiple projects and industries. Managing tools, aligning teams, and maintaining quality across every stage became time-consuming and often frustrating.",
-    "That’s why we built Aexo a design partner focused on creating high-performing digital experiences. A future where thoughtful design, smart systems, and fast execution help brands move forward with confidence.",
+    "We started Unicode IT with a simple belief: technology should help businesses grow, scale, and compete more effectively.",
+    "Today, digital product development often involves disconnected design, development, automation, and collaboration workflows that slow projects down.",
+    "Our team has faced these challenges across different industries, from managing complex systems to maintaining performance, usability, and scalability.",
+    "That’s why Unicode IT was built as a digital product and software development partner, helping businesses create custom software, web and mobile apps, SaaS platforms, and AI-powered solutions with clarity, speed, and long-term value.",
   ];
 
   const thinkerCopy = [
@@ -139,20 +139,23 @@ export function AboutPageLive() {
         />
         <div className="live-aboutHeroCopy" data-about-hero-copy>
           <Kicker>About Us</Kicker>
-          <h1>
-            We Help Brands Grow
+          <h1>Custom Software Development for Scalable Business Growth</h1>
+          {/* <p>
+            Unicode IT combines strategy, UI/UX design, web and mobile app
+            development, and AI automation
             <br />
-            <span>With Better Design</span>
-          </h1>
-          <p>
-            Combining strategy, design, and technology to help brands grow,
-            <br />
-            stand out, and perform consistently.
-          </p>
+            to build scalable digital products that help businesses grow and
+            perform better.
+          </p> */}
           <div className="live-aboutHeroButton">
             <LiveButton />
           </div>
         </div>
+      </section>
+      <section
+        className="live-foundingStorySection"
+        aria-label="Founding Story"
+      >
         <img
           className="live-aboutTeamImage"
           src="/assets/live/LjQl1b57p9r3QXIa0Tc9QhvrNvg.png"
@@ -161,11 +164,6 @@ export function AboutPageLive() {
         <img
           className="live-aboutHeroLowerGlow"
           src="/assets/live/brand-cyan/0pGuw8Zol1JkB8FhgdSyeOVr3M.png"
-          alt=""
-        />
-        <img
-          className="live-aboutHeroRuler"
-          src="/assets/live/7xWbAyTQN909Y3iX0Cq9QfWxA.png"
           alt=""
         />
         <div className="live-foundingCards">
@@ -188,11 +186,12 @@ export function AboutPageLive() {
                 to Be Better
               </h2>
               <p>
-                We started Aexo to simplify design, helping brands build better
-                digital experiences with clarity, speed, and purpose.
+                We started Unicode IT to simplify digital product development,
+                helping businesses build scalable software, web, and mobile
+                experiences with clarity, speed, and measurable impact.
               </p>
               <div className="live-foundingActions">
-                <LiveButton href="https://x.com/sandykoshti" centered>
+                <LiveButton href="#" centered>
                   Talk to founder
                 </LiveButton>
                 <LiveButton href="/contact" dark>
@@ -213,13 +212,29 @@ export function AboutPageLive() {
               ))}
             </div>
             <div className="live-storyLogo">
-              <img src="/assets/live/Gv6TSze4bq22VZUTnO9id1DcyE.png" alt="" />
-              <img
-                src="/assets/live/nBqqRERrJTMPHxxBjWkG1sV7Bzw.png"
-                alt="Aexo"
-              />
+              <img src="/assets/live/founding_logo_bg.png" alt="" />
+              <img src="/assets/logo/logo_white.png" alt="Unicode IT" />
             </div>
           </article>
+        </div>
+        <div className="fix-introWaveRow live-foundingStrip" aria-hidden="true">
+          <div className="fix-introWaveViewport">
+            <div
+              className="fix-introWaveTrack"
+              data-motion-loop="about-founding-ruler"
+            >
+              <img
+                className="fix-introWaveImage"
+                src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
+                alt=""
+              />
+              <img
+                className="fix-introWaveImage"
+                src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </section>
       <section className="live-thinkersSection" data-section="about-us">
@@ -389,13 +404,25 @@ export function AboutPageLive() {
             />
           </div>
         </div>
-        <div
-          className="live-cultureRuler"
-          data-about-culture-ruler
-          data-motion-loop="about-culture-ruler"
-        >
-          <img src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png" alt="" />
-          <img src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png" alt="" />
+        <div className="fix-introWaveRow live-cultureStrip" aria-hidden="true">
+          <div className="fix-introWaveViewport">
+            <div
+              className="fix-introWaveTrack"
+              data-about-culture-ruler
+              data-motion-loop="about-culture-ruler"
+            >
+              <img
+                className="fix-introWaveImage"
+                src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
+                alt=""
+              />
+              <img
+                className="fix-introWaveImage"
+                src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
         <img
           className="live-cultureGlow"

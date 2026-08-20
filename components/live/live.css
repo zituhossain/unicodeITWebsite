@@ -5736,8 +5736,8 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     background:
       radial-gradient(
         ellipse at 50% 35%,
-        rgba(98, 31, 19, 0.78),
-        rgba(18, 10, 9, 0.72) 48%,
+        var(--brand-alpha-30),
+        var(--brand-dark) 48%,
         #0a0a0a 78%
       ),
       repeating-radial-gradient(
@@ -5791,7 +5791,7 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     font-size: 15px;
     line-height: 1.45;
   }
-  .live-aboutTeamImage {
+  .live-aboutHero > .live-aboutTeamImage {
     position: absolute;
     z-index: 0;
     left: 0;
@@ -5817,7 +5817,7 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     text-align: left;
   }
   .live-foundingCards > article {
-    border: 1px solid #302220;
+    border: 1px solid var(--brand-alpha-20);
     border-radius: 20px;
     background: linear-gradient(
       145deg,
@@ -5863,9 +5863,7 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     padding: 50px 50px 104px;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-content: start;
-    gap: 35px 34px;
   }
   .live-founderCopy p {
     margin: 0;
@@ -9264,8 +9262,8 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     width: 855px;
     height: 176px;
     margin: 0;
-    font: 400 88px/88px var(--display);
-    letter-spacing: -1.76px;
+    font: 400 80px/80px var(--display);
+    letter-spacing: -1.6px;
   }
   .live-aboutHeroCopy h1 span {
     color: #fff;
@@ -9360,7 +9358,7 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     gap: 9px;
   }
   .live-foundingCards > article {
-    border: 1px solid #312d2c;
+    border: 1px solid var(--brand-alpha-20);
     border-radius: 25px;
     background: #0a0a0a;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.72);
@@ -9906,114 +9904,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     transform: translateX(-50%);
     opacity: 0.22;
   }
-
-  .live-culture {
-    position: relative;
-    padding-top: 100px;
-    background: #0a0a0a;
-  }
-  .live-culture > .live-aboutSectionTitle h2 {
-    margin-top: 14px;
-    font-size: 88px;
-    line-height: 88px;
-    letter-spacing: -1.76px;
-  }
-  .live-culture > p {
-    position: relative;
-    z-index: 4;
-    width: 650px;
-    margin: 12px auto 60px;
-    color: rgba(255, 255, 255, 0.7);
-    font: 500 17px/25.5px var(--sans);
-    letter-spacing: -0.17px;
-  }
-  .live-cultureFrame {
-    position: relative;
-    z-index: 4;
-    width: 1140px;
-    height: 745px;
-    margin: 0 auto;
-    padding: 15px;
-    border: 0;
-    border-radius: 28px;
-    background: #0a0a0a;
-    box-shadow:
-      inset 0 0 0 1px #373737,
-      inset 0 0 0 6px #0a0a0a,
-      inset 0 0 0 7px #2a2a2a;
-    overflow: hidden;
-  }
-  .live-cultureFrame:before {
-    content: "";
-    position: absolute;
-    z-index: 5;
-    inset: 10px;
-    border: 1px solid #333;
-    border-radius: 20px;
-    pointer-events: none;
-  }
-  .live-cultureTop,
-  .live-cultureBottom {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    gap: 5px;
-  }
-  .live-cultureTop {
-    height: 308px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .live-cultureBottom {
-    height: 395px;
-    margin-top: 5px;
-    grid-template-columns: 273px 273px 1fr;
-  }
-  .live-cultureFrame img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    opacity: 0;
-    will-change: transform, opacity;
-  }
-  .live-cultureRuler {
-    position: absolute;
-    z-index: 3;
-    left: 0;
-    top: 1094px;
-    width: 17280px;
-    height: 124px;
-    display: flex;
-    animation: aboutCultureRuler 57.6s linear infinite;
-    will-change: transform;
-  }
-  .live-cultureRuler img {
-    width: 8640px;
-    height: 124px;
-    max-width: none;
-    object-fit: cover;
-    opacity: 0.32;
-  }
-  @keyframes aboutCultureRuler {
-    to {
-      transform: translateX(-8640px);
-    }
-  }
-  .live-cultureGlow {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    top: 703px;
-    width: 1505px;
-    height: 1099px;
-    max-width: none;
-    object-fit: fill;
-    transform: translateX(-50%);
-    mix-blend-mode: screen;
-    opacity: 0;
-    pointer-events: none;
-  }
 }
 
 @media (min-width: 1200px) and (max-width: 1279.98px) {
@@ -10049,14 +9939,525 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   .live-thinkersSection {
     padding-top: 99px;
   }
-  .live-cultureRuler {
-    top: 1254px;
+}
+
+/* Founding Story is a standalone, full-width composition below the hero. */
+.live-foundingStorySection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #0a0a0a;
+  isolation: isolate;
+}
+.live-foundingStorySection::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0 38%,
+    rgba(10, 10, 10, 0.28) 52%,
+    #0a0a0a 72% 100%
+  );
+  pointer-events: none;
+}
+.live-foundingStorySection > .live-aboutTeamImage {
+  position: relative;
+  z-index: 0;
+  display: block;
+  grid-column: 1;
+  left: auto;
+  top: auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.live-foundingStorySection > .live-aboutHeroLowerGlow {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: min(55vw, 789px);
+  height: auto;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  pointer-events: none;
+}
+.live-foundingStorySection > .live-foundingCards {
+  z-index: 3;
+}
+.live-foundingStorySection > .live-foundingStrip {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.live-storyLogo > img:first-child {
+  opacity: 1;
+}
+
+@media (min-width: 1280px) {
+  .live-aboutPage .live-aboutHero {
+    height: 632px;
+    margin-bottom: 0;
+  }
+  .live-foundingStorySection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 734px 650px 25px 124px;
+  }
+  .live-foundingStorySection > .live-aboutTeamImage {
+    grid-area: 1 / 1 / 3;
+    align-self: start;
+    height: 871px;
+  }
+  .live-foundingStorySection > .live-foundingCards {
+    position: relative;
+    grid-area: 2 / 1;
+    justify-self: center;
+    left: auto;
+    top: auto;
+    width: 1140px;
+    height: 650px;
+    margin: 0;
+    transform: none;
+  }
+  .live-foundingStorySection > .live-foundingStrip {
+    grid-area: 4 / 1;
+  }
+  .live-founderCopy {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 510px 140px;
+  }
+  .live-founderParagraphs {
+    grid-area: 1 / 1;
+  }
+  .live-storyLogo {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 140px;
+    grid-area: 2 / 1;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1279.98px) {
+  .live-aboutPage .live-aboutHero {
+    height: 632px;
+    margin-bottom: 0;
+  }
+  .live-foundingStorySection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 626px 649px 27px 124px;
+  }
+  .live-foundingStorySection > .live-aboutTeamImage {
+    grid-area: 1 / 1 / 3;
+    align-self: start;
+    height: 725.828px;
+  }
+  .live-foundingStorySection > .live-foundingCards {
+    position: relative;
+    grid-area: 2 / 1;
+    justify-self: center;
+    left: auto;
+    top: auto;
+    width: 1138px;
+    height: 649px;
+    margin: 0;
+    grid-template-columns: 517px 612px;
+    transform: none;
+  }
+  .live-foundingStorySection > .live-foundingStrip {
+    grid-area: 4 / 1;
+  }
+  .live-founderCopy {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 509px 140px;
+  }
+  .live-founderParagraphs {
+    grid-area: 1 / 1;
+  }
+  .live-storyLogo {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 140px;
+    grid-area: 2 / 1;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .live-aboutPage .live-aboutHero > .live-aboutHeroTexture,
+  .live-aboutPage .live-aboutHero > .live-aboutHeroGrid,
+  .live-aboutPage .live-aboutHero > .live-aboutHeroRing {
+    display: none;
+  }
+  .live-foundingStorySection {
+    display: block;
+  }
+  .live-foundingStorySection > .live-aboutTeamImage {
+    aspect-ratio: 1440 / 871;
+    height: auto;
+  }
+  .live-foundingStorySection > .live-aboutHeroLowerGlow {
+    width: min(75vw, 680px);
+    opacity: 0.65;
+  }
+  .live-foundingStorySection > .live-foundingCards {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(960px, calc(100% - 64px));
+    height: auto;
+    margin: 40px auto 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
+    gap: 12px;
+    transform: none;
+    text-align: left;
+  }
+  .live-foundingCards > article {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--brand-alpha-20);
+    border-radius: 20px;
+    background: #0a0a0a;
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.62);
+  }
+  .live-foundingSurface,
+  .live-foundingGlow,
+  .live-founderSurface {
+    display: block;
+  }
+  .live-foundingSurface,
+  .live-founderSurface {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+  .live-foundingGlow {
+    position: absolute;
+    z-index: 1;
+    left: -34%;
+    bottom: -34%;
+    width: 130%;
+    height: auto;
+    max-width: none;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  .live-foundingContent {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 40px 36px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .live-foundingContent h2 {
+    width: 100%;
+    margin: 14px 0 20px;
+    color: #fff;
+    font: 400 64px/0.95 var(--display);
+    letter-spacing: -1.28px;
+    text-transform: uppercase;
+  }
+  .live-foundingContent > p:not(.live-kicker) {
+    width: 100%;
+    margin: 0;
+    color: #999;
+    font: 500 16px/24px var(--sans);
+  }
+  .live-foundingActions {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .live-foundingActions .live-liveButton,
+  .live-foundingActions > a {
+    width: 100%;
+  }
+  .live-founderCopy {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+  .live-founderParagraphs {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    padding: 40px 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .live-founderParagraphs p {
+    width: 100%;
+    margin: 0;
+    color: #999;
+    font: 500 16px/24px var(--sans);
+  }
+  .live-storyLogo {
+    position: relative;
+    z-index: 2;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 608 / 140;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-top: 1px solid #292929;
+  }
+  .live-storyLogo > img:first-child {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+  .live-storyLogo > img:last-child {
+    position: relative;
+    width: 137px;
+    height: 45px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-foundingStorySection > .live-foundingCards {
+    width: calc(100% - 40px);
+    margin: 32px auto 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .live-foundingContent {
+    padding: 34px 32px 30px;
+  }
+  .live-founderParagraphs {
+    padding: 34px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-foundingStorySection > .live-foundingCards {
+    width: calc(100% - 32px);
+  }
+  .live-foundingContent {
+    padding: 30px 24px 24px;
+  }
+  .live-foundingContent h2 {
+    font-size: 52px;
+    line-height: 0.94;
+    letter-spacing: -1.04px;
+  }
+  .live-founderParagraphs {
+    padding: 30px 24px;
+    gap: 18px;
+  }
+}
+
+/* Culture collage and transition strip. */
+.live-aboutPage .live-culture {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  padding: 80px 0 0;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+  isolation: isolate;
+}
+.live-culture > .live-aboutSectionTitle {
+  position: relative;
+  z-index: 4;
+  width: min(1140px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.live-culture > p {
+  position: relative;
+  z-index: 4;
+  width: min(650px, calc(100% - 40px));
+  margin: 18px auto 40px;
+  color: rgba(255, 255, 255, 0.7);
+  font: 500 17px/25.5px var(--sans);
+  letter-spacing: -0.17px;
+}
+.live-cultureFrame {
+  position: relative;
+  z-index: 4;
+  width: min(1140px, calc(100% - 64px));
+  height: auto;
+  margin: 0 auto;
+  padding: clamp(7px, 1.04vw, 15px);
+  border: 0;
+  border-radius: clamp(16px, 1.94vw, 28px);
+  background: #0a0a0a;
+  box-shadow:
+    inset 0 0 0 1px #373737,
+    inset 0 0 0 clamp(4px, 0.42vw, 6px) #0a0a0a,
+    inset 0 0 0 clamp(5px, 0.49vw, 7px) #2a2a2a;
+  overflow: hidden;
+}
+.live-cultureFrame::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  inset: clamp(5px, 0.69vw, 10px);
+  border: 1px solid #333;
+  border-radius: clamp(11px, 1.39vw, 20px);
+  pointer-events: none;
+}
+.live-cultureTop,
+.live-cultureBottom {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  min-width: 0;
+  height: auto;
+  gap: clamp(2px, 0.35vw, 5px);
+}
+.live-cultureTop {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  aspect-ratio: 1110 / 308;
+}
+.live-cultureBottom {
+  grid-template-columns: minmax(0, 273fr) minmax(0, 273fr) minmax(0, 554fr);
+  aspect-ratio: 1110 / 395;
+  margin-top: clamp(2px, 0.35vw, 5px);
+}
+.live-cultureFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  border-radius: clamp(7px, 0.83vw, 12px);
+  object-fit: cover;
+  opacity: 1;
+  will-change: transform;
+}
+.live-culture > .live-cultureStrip {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 124px;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .live-aboutPage .live-culture {
+    padding-top: 100px;
+  }
+  .live-culture > p {
+    margin-top: 12px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .live-culture > .live-aboutSectionTitle {
+    width: 1140px;
+  }
+  .live-culture > .live-aboutSectionTitle h2 {
+    margin-top: 14px;
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -1.76px;
+  }
+  .live-cultureFrame {
+    width: 1140px;
+    height: 745px;
+    padding: 15px;
+    border-radius: 28px;
+  }
+  .live-cultureFrame::before {
+    inset: 10px;
+    border-radius: 20px;
+  }
+  .live-cultureTop {
+    height: 308px;
+    aspect-ratio: auto;
+    gap: 5px;
+  }
+  .live-cultureBottom {
+    height: 395px;
+    aspect-ratio: auto;
+    margin-top: 5px;
+    gap: 5px;
+  }
+  .live-cultureFrame img {
+    border-radius: 12px;
+  }
+  .live-cultureGlow {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: 0;
+    display: block;
+    width: min(104.5vw, 1505px);
+    height: auto;
+    max-width: none;
+    border-radius: 0;
+    object-fit: contain;
+    transform: translateX(-50%);
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-culture > p {
+    margin-bottom: 36px;
+  }
+  .live-culture > p br {
+    display: none;
+  }
+  .live-cultureFrame {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .live-culture > .live-aboutSectionTitle,
+  .live-culture > p {
+    width: calc(100% - 32px);
+  }
+  .live-cultureFrame {
+    width: calc(100% - 32px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .live-aboutHeroRing,
-  .live-cultureRuler {
+  .live-aboutHeroRing {
     animation: none !important;
     transform: none;
   }
@@ -10068,8 +10469,7 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     opacity: 1 !important;
   }
 }
-html[data-motion="paused"] .live-aboutHeroRing,
-html[data-motion="paused"] .live-cultureRuler {
+html[data-motion="paused"] .live-aboutHeroRing {
   animation: none !important;
 }
 html[data-motion="paused"] .live-teamCardSurface,
@@ -10077,10 +10477,6 @@ html[data-motion="paused"] .live-teamCardAbstract {
   opacity: 1 !important;
   transition: none !important;
 }
-html[data-motion="paused"] .live-cultureRuler {
-  transition: none !important;
-}
-
 /* Source-authored indicator geometry and shared interaction timing. */
 .live-kicker > i {
   position: relative;

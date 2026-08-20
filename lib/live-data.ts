@@ -92,7 +92,7 @@ export const calLink = CALENDLY_URL;
 export const liveNavigation = [
   { label: "Services", href: "/#what-we-do" },
   { label: "Works", href: "/works" },
-  // { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about" },
   { label: "Pricing", href: "/pricing" },
 ] as const;
 
